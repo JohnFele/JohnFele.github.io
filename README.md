@@ -1,1 +1,1 @@
-# http://JohnFele.github.io
+# JohnFele.github.io
