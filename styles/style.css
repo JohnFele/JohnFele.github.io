@@ -140,6 +140,15 @@ main:hover {
     font-size: 9px;
     color: rgb(0, 150, 255);
 }
+#image {
+    text-indent: -9999999999px;
+    background-image: url(../images/IMG-20231126-WA0033-1.jpg);
+    background-size: 100%;
+    background-position: center;
+    height: 90px;
+    margin: 0;
+    border-radius: 20px;
+}
 .content {
     grid-area: content;
     display: grid;
@@ -249,7 +258,7 @@ footer a:hover {
             'content'
             'content'
             'content'
-            'footer';
+            'footer'
     }
     #sidebar {
         border: 1px solid whitesmoke;
