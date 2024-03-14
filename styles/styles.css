@@ -197,7 +197,14 @@ body.dark-theme {
 .profile__buttons-small {
   column-gap: .25rem;
 }
-
+.about__me {
+  padding-top: 40px;
+  justify-content: center;
+  text-align: center;
+}
+.about__me p {
+  padding-top: 10px;
+}
 /* ===== Buttons ===== */
 .button {
   display: inline-flex;
