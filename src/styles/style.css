@@ -658,6 +658,7 @@ h1 {
 .contact-form textarea {
   resize: none;
   min-height: 150px;
+  font-family: var(--pr-font);
 }
 
 .contact-form textarea:placeholder-shown {

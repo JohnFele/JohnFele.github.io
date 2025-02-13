@@ -98,8 +98,7 @@ function validateForm(values) {
 
 async function sendMessage(values) {
   try {
-    emailjs.init("service_t5357hp");
-    const response = await emailjs.send("service_t5357hp", {
+    const response = await emailjs.send("service_gi653bl", "template_mj0gzng", {
       from_name: values.name,
       from_email: values.email,
       message: values.message
@@ -131,6 +130,5 @@ function highlightError(...fields) {
 
 function projectHandler() {
   const projectButton = document.getElementsByClassName('cta-button');
-  // projectButton.classList.add('cta-alert');
   showAlert('Try again later to see projects', 'error');
 }
