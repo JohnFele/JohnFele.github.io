@@ -89,26 +89,26 @@ img {
 
 .input-error {
   outline: 1px solid var(--alert-color);
-  box-shadow: 0 0 5px var(--alert-color);
+  box-shadow: 0 0 3px var(--alert-color);
 }
 
 textarea.input-error {
   outline: 1px solid var(--alert-color);
-  box-shadow: 0 0 5px var(--alert-color);
+  box-shadow: 0 0 3px var(--alert-color);
 }
 
 @keyframes flash {
   0% {
     outline: 1px solid var(--alert-color);
-    box-shadow: 0 0 5px var(--alert-color);
+    box-shadow: 0 0 3px var(--alert-color);
   }
   50% {
-    outline: 1px solid transparent;
-    box-shadow: 0 0 5px transparent;
+    outline: 1px solid rgba(255, 77, 77, 0.3);
+    box-shadow: 0 0 3px rgba(255, 77, 77, 0.3);
   }
   100% {
     outline: 1px solid var(--alert-color);
-    box-shadow: 0 0 5px var(--alert-color);
+    box-shadow: 0 0 3px var(--alert-color);
   }
 }
 
