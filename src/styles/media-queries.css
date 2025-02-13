@@ -1,0 +1,257 @@
+/* General Media Queries */
+@media screen and (max-width: 1200px) {
+  #about,
+  #skills,
+  #services,
+  #experience,
+  #projects,
+  #contact {
+    padding: 3em 1.5em;
+    margin: 1.5em;
+  }
+
+  .home-content {
+    max-width: 100%;
+    margin: 0;
+    padding: 1em;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 1.5em;
+    text-align: center;
+  }
+
+  .footer-content .socials-container {
+    justify-content: flex-start;
+  }
+
+  #about h2, #skills h2, #services h2, #experience h2, #projects h2, #contact h2 {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .skills-grid, .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Adjust contact sections */
+  .contact-container {
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+  .contact-info,
+  .contact-form,
+  .footer-section {
+    text-align: center;
+  }
+
+  .footer-content .socials-container {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #about,
+  #skills,
+  #services,
+  #experience,
+  #projects,
+  #contact {
+    padding: 2em 1em;
+    margin: 1em;
+  }
+
+  .timeline-item,
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    padding: 1.5em;
+  }
+
+  .footer-section {
+    flex: 1 1 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #about h2, #skills h2, #services h2, #experience h2, #projects h2, #contact h2 {
+    font-size: 1.5em;
+  }
+
+  .timeline-item {
+    padding: 1em;
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    padding: 0.6em;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+
+  .footer-bottom {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  #about, #skills, #services, #experience, #projects, #contact {
+    padding: 1em 0.5em;
+    margin: 0.5em;
+  }
+
+  .timeline-item {
+    padding: 0.8em;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.5em;
+  }
+
+  .contact-form button {
+    padding: 0.5em 1em;
+  }
+
+  .footer-section h3 {
+    font-size: 1.2em;
+  }
+
+  .footer-section ul li {
+    font-size: 0.9em;
+  }
+
+  .footer-bottom {
+    font-size: 0.7em;
+  }
+}
+
+/* NAVIGATION */
+@media screen and (max-width: 1000px) {
+  #open-sidebar, #close-sidebar {
+    display: block;
+  }
+
+  #open-sidebar {
+    position: fixed;
+    top: 0.5em;
+    right: 0.5em;
+    z-index: 10;
+  }
+
+  nav {
+    background: #222222;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    height: 100vh;
+    width: min(13em, 100%);
+    z-index: 10;
+    border-left: 1px solid var(--hover-color);
+    transition: right 0.3s ease-out;
+  }
+
+  nav.show-sidebar {
+    right: 0;
+  }
+
+  nav.show-sidebar ~ #overlay {
+    display: block;
+  }
+
+  nav ul {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  nav a {
+    width: 100%;
+    padding-left: 2.5em;
+  }
+
+  nav .home-link {
+    margin-right: unset;
+  }
+}
+
+/* HOME SECTION */
+@media screen and (max-width: 1000px) {
+  #home {
+    flex-direction: column;
+    text-align: center;
+    padding: 1em;
+    height: auto;
+    min-height: calc(100vh - 3.3em);
+  }
+
+  .home-image {
+    display: none;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  #home h2 {
+    font-size: 1.3em;
+  }
+
+  .socials-container {
+    justify-content: center;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 1.5em;
+    text-align: center;
+  }
+
+  .footer-content .socials-container {
+    justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #home {
+    padding-top: 0.5em;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-top: 0.5em;
+  }
+
+  #home h2 {
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  #home h2 {
+    font-size: 1em;
+  }
+
+  .socials-container a {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .socials-container a i {
+    font-size: 1.2rem;
+  }
+
+  .socials-container a.cta-button {
+    padding: 0.8em 1.5em;
+    font-size: 0.9em;
+  }
+}
