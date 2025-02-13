@@ -1,278 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script
-      src="https://kit.fontawesome.com/0a4ff4127d.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="icon" href="./images/icons8-website-96.png" />
-    <link rel="stylesheet" href="./styles/styles.css" />
-    <link rel="stylesheet" href="./styles/media-queries.css" />
-    <title>John Fele's Portfolio Website</title>
-  </head>
-  <body>
-    <header class="profile conatiner">
-      <!-- Theme button -->
-      <i class="fa-regular fa-moon change-theme" id="theme-button"></i>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>John Fele Portfolio</title>
+  <link rel="stylesheet" href="src/styles/style.css">
+  <link rel="stylesheet" href="src/styles/media-queries.css">
+  <script src="https://kit.fontawesome.com/0a4ff4127d.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <button id="open-sidebar" onclick="toggleSidebar()" aria-label="open-sidebar" aria-expanded="false" aria-controls="navbar">
+      <i class="fa-solid fa-bars"></i>
+    </button>
 
-      <div class="profile__container grid">
-        <div class="profile__data">
-          <div class="profile__border">
-            <div class="profile__perfil">
-              <img src="./images/John.png" alt="John's image" />
-            </div>
-          </div>
-
-          <h2 class="profile__name">John Fele</h2>
-          <h3 class="profile__profession">Web Developer</h3>
-
-          <ul class="profile__social">
-            <li>
-              <a
-                href="https://www.linkedin.com/in/mr-john-fele-878b6922a/"
-                target="_blank"
-                class="profile__social-link"
-                ><i class="fa-brands fa-linkedin-in"></i
-              ></a>
-            </li>
-            <li>
-              <a
-                href="https://github.com/johnfele"
-                target="_blank"
-                class="profile__social-link"
-                ><i class="fa-brands fa-github"></i
-              ></a>
-            </li>
-            <li>
-              <a
-                href="https://web.facebook.com/profile.php?id=100072066339731"
-                target="_blank"
-                class="profile__social-link"
-                ><i class="fa-brands fa-facebook"></i
-              ></a>
-            </li>
-          </ul>
-        </div>
-        <div class="profile__info grid">
-          <div class="profile__info-group">
-            <h3 class="profile__info-number">1</h3>
-            <p class="profile__info-description">Years <br />Coding</p>
-          </div>
-          <div class="profile__info-group">
-            <h3 class="profile__info-number">0</h3>
-            <p class="profile__info-description">
-              Completed <br />
-              projects
-            </p>
-          </div>
-          <div class="profile__info-group">
-            <h3 class="profile__info-number">0</h3>
-            <p class="profile__info-description">
-              People <br />
-              worked with
-            </p>
-          </div>
-        </div>
-        <div class="profile__buttons">
-          <a
-            href="https://drive.google.com/file/d/1iHXXa6-7ObN4qsyan-BxBrfIIvF4QEZ3/view?usp=sharing"
-            target="_blank"
-            class="button"
-            >View CV<i class="fa-solid fa-up-right-from-square"></i
-          ></a>
-          <div class="profile__buttons-small">
-            <a
-              href="https://api.whatsapp.com/send?phone=+27620882443&text=Hello,"
-              target="_blank"
-              class="button button-small button__gray"
-              ><i class="fa-brands fa-whatsapp"></i
-            ></a>
-            <a
-              href="https://m.me/John-Fele"
-              target="_blank"
-              class="button button-small button__gray"
-              ><i class="fa-brands fa-facebook-messenger"></i
-            ></a>
-          </div>
+    <nav id="navbar">
+      <ul>
+        <li><button id="close-sidebar" onclick="toggleSidebar()" aria-label="close-sidebar"><i class="fa-solid fa-xmark"></i></button></li>
+        <a class="logo"><span class="logo-styling">Port<span>folio.</span></span></a>
+        <li class="home-link"><a class="active-link" href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a class="accent-link" href="https://drive.google.com/file/d/1Gaa0sSkAQ8THKSvQoFRYFeCywWrDFzRX/view?usp=sharing" target="_blank"><span>Resume</span></a></li>
+      </ul>
+    </nav>
+    <div id="overlay" onclick="toggleSidebar()" aria-hidden="true"></div>
+    
+    <section id="home">
+      <div class="home-content">
+        <h1>Hello World, I'm John Fele.</h1>
+        <h2>I'm a <span class="highlight">full stack web developer.</span></h2>
+        <p>
+          I turn ideas into scalable, user-friendly applications that deliver real impact. As an aspiring full-stack developer 
+          and passionate mathematics tutor, I combine problem-solving skills with technical expertise to build efficient solutions. 
+          Let's create something great together.
+        </p>
+        <div class="socials-container">
+          <a href="#projects" class="cta-button">View Projects</a>
+          <a data-icon="LinkedIn" style="--accent-color: #0077B5" href="https://www.linkedin.com/in/mr-john-fele-878b6922a/" target="_blank">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a data-icon="GitHub" style="--accent-color: #171515" href="https://github.com/JohnFele" target="_blank">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a data-icon="eMail" style="--accent-color: #EA4335" href="mailto:fele476@gmail.com" target="_blank">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
         </div>
       </div>
-      <div class="about__me">
-        <h3>About Me</h3>
+      
+      <div class="home-image">
+        <img src="src/assets/images/John.png" alt="An image of John Fele">
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section id="about" class="hidden">
+      <div class="about-content">
+        <h2>About Me</h2>
         <p>
-          Hello World! <br />I am an aspiring full stack developer and software
-          engineer. <br />
-          I have not made any projects of my own yet <br />
-          as I am still in my learning journey. I am still figuring things out.
+          Hello World! I'm a passionate full stack web developer with a knack for solving complex problems and thriving in logical environments. 
+          My journey in tech has been hands-on and challenging—I started as the sole assistant programmer at my company, focusing on backend development 
+          while stepping into senior roles early on. Beyond coding, I tutor high school mathematics, life sciences, and physical sciences, a role I've embraced 
+          since 2018. My personalized teaching approach has helped numerous students achieve distinctions, as I adapt to their unique learning styles quickly 
+          and effectively.
         </p>
       </div>
-    </header>
-    <!-- ======= MAIN ======= -->
-    <main>
-      <section class="filters container">
-        <ul>
-          <li class="filters__content">
-            <button
-              class="filters__button filter-tab-active"
-              data-target="#projects"
-            >
-              Projects
-            </button>
-            <button class="filters__button" data-target="#skills">
-              Skills
-            </button>
-          </li>
-        </ul>
-        <div class="filters__sections">
-          <!-- =====projects===== -->
-          <div
-            class="projects__content grid filters__active"
-            data-content
-            id="projects"
-          >
-            <article class="projects__card">
-              <img
-                src="./images/work-1.png"
-                alt="Project photo"
-                class="projects__img"
-              />
-              <div class="projects__modal">
-                <div>
-                  <span class="projects__subtitle">Nothing Here</span>
-                  <h3 class="projects__title">More content coming soon!</h3>
-                  <a href="#" class="projects__button button button__small">
-                    <i class="fa-solid fa-up-right-from-square"></i>
-                  </a>
-                </div>
-              </div>
-            </article>
-            <article class="projects__card">
-              <img
-                src="./images/work-1.png"
-                alt="Project photo"
-                class="projects__img"
-              />
-              <div class="projects__modal">
-                <div>
-                  <span class="projects__subtitle">Nothing Here</span>
-                  <h3 class="projects__title">More content coming soon!</h3>
-                  <a href="#" class="projects__button button button__small">
-                    <i class="fa-solid fa-up-right-from-square"></i>
-                  </a>
-                </div>
-              </div>
-            </article>
+    </section>
+
+    <section id="skills" class="hidden">
+      <div class="skills-content">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <i class="fa-brands fa-html5"></i>
+            <h3>HTML5</h3>
+            <p>Proficient in creating semantic and accessible web pages.</p>
           </div>
-          <!-- ===== skills ===== -->
-          <div class="skills__content grid" data-content id="skills">
-            <div class="skills__area">
-              <h3 class="skills__title">Frontend developer</h3>
-              <div class="skills__box">
-                <div class="skills__group">
-                  <div class="skills__data">
-                    <i class="fa-regular fa-circle-check"></i>
-
-                    <div>
-                      <h3 class="skills__name">HTML</h3>
-                      <span class="skills__level">Intermediate</span>
-                    </div>
-                  </div>
-                  <div class="skills__data">
-                    <i class="fa-regular fa-circle-check"></i>
-
-                    <div>
-                      <h3 class="skills__name">CSS</h3>
-                      <span class="skills__level">Intermediate</span>
-                    </div>
-                  </div>
-                  <div class="skills__data">
-                    <i class="fa-regular fa-circle-check"></i>
-
-                    <div>
-                      <h3 class="skills__name">JavaScript</h3>
-                      <span class="skills__level">Intermediate</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="skills__group">
-                  <div class="skills__data">
-                    <i class="fa-regular fa-circle-check"></i>
-
-                    <div>
-                      <h3 class="skills__name">Git</h3>
-                      <span class="skills__level">Intermediate</span>
-                    </div>
-                  </div>
-                  <div class="skills__data">
-                    <i class="fa-regular fa-circle-check"></i>
-
-                    <div>
-                      <h3 class="skills__name">Python</h3>
-                      <span class="skills__level">Basic</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="skills__area">
-              <h3 class="skills__title">Backend developer</h3>
-              <div class="skills__box">
-                <div class="skills__group">
-                  <div class="skills__data">
-                    <i class="fa-regular fa-circle-check"></i>
-
-                    <div>
-                      <h3 class="skills__name">PostgreSQL</h3>
-                      <span class="skills__level">Basic</span>
-                    </div>
-                  </div>
-                  <div class="skills__data">
-                    <i class="fa-regular fa-circle-check"></i>
-
-                    <div>
-                      <h3 class="skills__name">Node</h3>
-                      <span class="skills__level">Basic</span>
-                    </div>
-                  </div>
-                  <div class="skills__data">
-                    <i class="fa-regular fa-circle-check"></i>
-
-                    <div>
-                      <h3 class="skills__name">JavaScript</h3>
-                      <span class="skills__level">Intermediate</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="skills__group">
-                  <div class="skills__data">
-                    <i class="fa-regular fa-circle-check"></i>
-
-                    <div>
-                      <h3 class="skills__name">Python</h3>
-                      <span class="skills__level">Basic</span>
-                    </div>
-                  </div>
-                  <div class="skills__data">
-                    <i class="fa-regular fa-circle-check"></i>
-
-                    <div>
-                      <h3 class="skills__name">C</h3>
-                      <span class="skills__level">Intermediate</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="skill-card">
+            <i class="fa-brands fa-css3-alt"></i>
+            <h3>CSS3</h3>
+            <p>Skilled in responsive design and modern CSS frameworks.</p>
+          </div>
+          <div class="skill-card">
+            <i class="fa-brands fa-css3-alt"></i>
+            <h3>Tailwind CSS</h3>
+            <p>Experienced in utility-first styling for fast and responsive designs.</p>
+          </div>          
+          <div class="skill-card">
+            <i class="fa-brands fa-js"></i>
+            <h3>JavaScript</h3>
+            <p>Experienced in building interactive and dynamic web applications.</p>
+          </div>
+          <div class="skill-card">
+            <i class="fa-brands fa-react"></i>
+            <h3>React</h3>
+            <p>Proficient in building reusable components and state management.</p>
+          </div>
+          <div class="skill-card">
+            <i class="fa-solid fa-vial"></i>
+            <h3>Jest & Jasmine</h3>
+            <p>Skilled in writing unit and integration tests for robust applications.</p>
+          </div>          
+          <div class="skill-card">
+            <i class="fa-brands fa-node"></i>
+            <h3>Node.js</h3>
+            <p>Experienced in backend development and API integration.</p>
+          </div>
+          <div class="skill-card">
+            <i class="fa-solid fa-server"></i>
+            <h3>Express.js</h3>
+            <p>Skilled in building RESTful APIs and middleware integration.</p>
+          </div>
+          <div class="skill-card">
+            <i class="fa-solid fa-database"></i>
+            <h3>Databases</h3>
+            <p>Skilled in SQL and NoSQL databases like PostgreSQL and MongoDB.</p>
+          </div>
+          <div class="skill-card">
+            <i class="fa-brands fa-docker"></i>
+            <h3>Docker</h3>
+            <p>Proficient in containerization and deploying applications efficiently.</p>
+          </div>
+          <div class="skill-card">
+            <i class="fa-solid fa-rocket"></i>
+            <h3>CI/CD</h3>
+            <p>Experienced in setting up automated pipelines using GitHub Actions and Jenkins.</p>
+          </div>
+          
+          <div class="skill-card">
+            <i class="fa-brands fa-git-alt"></i>
+            <h3>Git & GitHub</h3>
+            <p>Experienced in version control, branching strategies, and collaborative development.</p>
           </div>
         </div>
-      </section>
-    </main>
-    <!-- ======= FOOTER ======= -->
-    <footer>
-      <span class="footer__copy"> &#169; John Fele </span>
-    </footer>
-    <!-- ======= SCRIPT ======= -->
-    <script src="./Scripts/script.js"></script>
-  </body>
+      </div>
+    </section>
+
+    <section id="services" class="hidden">
+      <div class="services-content">
+        <h2>Services</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <i class="fa-solid fa-code"></i>
+            <h3>Web Development</h3>
+            <p>Building responsive, user-friendly websites and web applications tailored to your needs.</p>
+          </div>
+          <div class="service-card">
+            <i class="fa-solid fa-network-wired"></i>
+            <h3>API Development</h3>
+            <p>Designing and implementing secure, scalable RESTful and GraphQL APIs.</p>
+          </div>
+          <div class="service-card">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <h3>DevOps & Deployment</h3>
+            <p>Setting up CI/CD pipelines, cloud hosting, and automated deployments.</p>
+          </div>                    
+          <div class="service-card">
+            <i class="fa-solid fa-mobile-screen"></i>
+            <h3>Mobile-Friendly Design</h3>
+            <p>Ensuring your website looks great and functions seamlessly on all devices.</p>
+          </div>
+          <div class="service-card">
+            <i class="fa-solid fa-gears"></i>
+            <h3>Backend Development</h3>
+            <p>Developing robust server-side solutions and APIs for scalable applications.</p>
+          </div>
+          <div class="service-card">
+            <i class="fa-solid fa-pen-ruler"></i>
+            <h3>UI/UX Design</h3>
+            <p>Creating intuitive and visually appealing interfaces for optimal user experiences.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="hidden">
+      <div class="experience-content">
+        <h2>Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Mathematics Tutor</h3>
+            <p class="timeline-date">2018 - Present</p>
+            <p>Provided personalized tutoring to high school students, helping them achieve academic success in mathematics and sciences.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Junior Developer</h3>
+            <p class="timeline-date">2023 - 2024</p>
+            <p>Started as a backend developer, gradually taking on more responsibilities and transitioning into a full stack role.</p>
+          </div>
+          <div class="timeline-item">
+            <h3>Full Stack Developer</h3>
+            <p class="timeline-date">2024 - Present</p>
+            <p>Developed and maintained web applications, focusing on both frontend and backend technologies. Collaborated with cross-functional teams to deliver high-quality solutions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="contact" class="hidden">
+      <div class="contact-content">
+        <h2>Contact Me</h2>
+        <p>Let's connect and bring your ideas to life! Feel free to reach out for collaborations, projects, or just a friendly chat.</p>
+        <div class="contact-container">
+          <div class="contact-info">
+            <h3>Contact Information</h3>
+            <ul>
+              <li>
+                <i class="fa-solid fa-envelope contact"></i>
+                <a href="mailto:johnfele@example.com">fele476@gmail.com</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-phone contact"></i>
+                <a href="tel:+1234567890">+27 62 088 2443</a>
+              </li>
+              <li>
+                <i class="fa-solid fa-location-dot contact"></i>
+                <span>Johannesburg, South Africa</span>
+              </li>
+            </ul>
+            <div class="socials-container">
+              <a data-icon="LinkedIn" style="--accent-color: #0077B5" href="https://www.linkedin.com/in/mr-john-fele-878b6922a/" target="_blank">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a data-icon="GitHub" style="--accent-color: #171515" href="https://github.com/JohnFele" target="_blank">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a data-icon="eMail" style="--accent-color: #EA4335" href="mailto:fele476@gmail.com" target="_blank">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+          
+          <form id="contactForm" class="contact-form" aria-labelledby="contactFormTitle">
+            <fieldset>
+              <legend id="contactFormTitle">Contact Us</legend>
+          
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name">
+          
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" placeholder="Enter your email">
+          
+              <label for="message">Your Message</label>
+              <textarea id="message" name="message" placeholder="Write your message here" rows="5"></textarea>
+          
+              <button type="submit" class="cta-button">Send Message</button>
+            </fieldset>
+          </form>
+          
+        </div>
+      </div>
+    </section>
+
+    <div id="alertMessage" class="alert" role="alert"></div>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>John Fele</h3>
+        <p>A passionate full stack web developer and tutor dedicated to creating impactful solutions and helping others succeed.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Follow Me</h3>
+        <div class="socials-container">
+          <a data-icon="LinkedIn" style="--accent-color: #0077B5" href="https://www.linkedin.com/in/mr-john-fele-878b6922a/" target="_blank">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a data-icon="GitHub" style="--accent-color: #171515" href="https://github.com/JohnFele" target="_blank">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a data-icon="eMail" style="--accent-color: #EA4335" href="mailto:fele476@gmail.com" target="_blank">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="src/js/script.js"></script>
+
+</body>
+
 </html>
