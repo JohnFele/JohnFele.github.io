@@ -98,7 +98,8 @@ function validateForm(values) {
 
 async function sendMessage(values) {
   try {
-    const response = await emailjs.send("your_service_id", "your_template_id", {
+    emailjs.init("service_t5357hp");
+    const response = await emailjs.send("service_t5357hp", {
       from_name: values.name,
       from_email: values.email,
       message: values.message

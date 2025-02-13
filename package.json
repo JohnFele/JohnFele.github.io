@@ -1,0 +1,15 @@
+{
+  "name": "JohnFele.github.io",
+  "version": "1.0.0",
+  "description": "This is my personal portfolio website showcasing my projects, skills, and experience as a full stack web developer. The site is built with HTML, CSS, and JavaScript and includes a dedicated projects page highlighting my work.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "John Fele",
+  "license": "ISC",
+  "dependencies": {
+    "@emailjs/browser": "^4.4.1"
+  }
+}
