@@ -132,7 +132,13 @@
 }
 
 /* NAVIGATION */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1200px) {
+  nav a {
+    padding: 1em 1em;
+  }
+}
+
+@media screen and (max-width: 900px) {
   #open-sidebar, #close-sidebar {
     display: block;
   }
@@ -171,7 +177,11 @@
 
   nav a {
     width: 100%;
-    padding-left: 2.5em;
+    padding-left: 2em;
+  }
+
+  nav a::after {
+    display: none;
   }
 
   nav .home-link {
@@ -180,6 +190,17 @@
 }
 
 /* HOME SECTION */
+@media screen and (max-width: 1200px) {
+  .home-content {
+    max-width: 50%;
+    padding: auto;
+    margin: 0;
+  }
+  .home-content h1 {
+    font-size: 2.5em;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   #home {
     flex-direction: column;
@@ -187,6 +208,10 @@
     padding: 1em;
     height: auto;
     min-height: calc(100vh - 3.3em);
+  }
+
+  #home .home-content {
+    max-width: 100%;
   }
 
   .home-image {
