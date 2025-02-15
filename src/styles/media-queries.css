@@ -36,7 +36,6 @@
     grid-template-columns: 1fr;
   }
 
-  /* Adjust contact sections */
   .contact-container {
     flex-direction: column;
     gap: 1.5em;
@@ -49,7 +48,7 @@
   }
 
   .footer-content .socials-container {
-    justify-content: center;
+    justify-content: center !important;
   }
 }
 
