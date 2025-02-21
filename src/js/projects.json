@@ -1,0 +1,26 @@
+[
+  {
+    "image": "e-commerce.jpg",
+    "title": "Project 1",
+    "description": "A web application for managing a library's books.",
+    "github": "https://github.com/user1/project1",
+    "link": "https://github.com/user1/project1",
+    "technologies": ["React", "Node.js", "Express.js"]
+  },
+  {
+    "image": "e-commerce.jpg",
+    "title": "Project 2",
+    "description": "A blog application with user authentication and CRUD functionality.",
+    "github": "https://github.com/user2/project2",
+    "link": "https://github.com/user2/project2",
+    "technologies": ["React", "Node.js", "Express.js", "MongoDB"]
+  },
+  {
+    "image": "e-commerce.jpg",
+    "title": "Project 3",
+    "description": "An online store with shopping cart, checkout, and payment functionality.",
+    "github": "https://github.com/user3/project3",
+    "link": "https://github.com/user3/project3",
+    "technologies": ["React", "Node.js", "Express.js", "MongoDB"]
+  }
+]
