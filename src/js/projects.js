@@ -15,6 +15,9 @@ const addProjectData = (projects) => {
             <p>
               ${project.description}
             </p>
+            <p>
+              Technologies:<br> ${project.technologies.join(", ")}
+            </p>
             <div class="project-links">
               <a href="${project.github}" target="_blank" class="project-link">
                 <i class="fa-brands fa-github"></i> GitHub
