@@ -67,7 +67,7 @@ function validateForm(values) {
 
 async function sendMessage(values) {
   try {
-    const response = await emailjs.send("service_gi653bl", "template_mj0gzng", {
+    const response = await emailjs.send("service_lod25uq", "template_mj0gzng", {
       from_name: values.name,
       from_email: values.email,
       message: values.message
@@ -99,5 +99,5 @@ function highlightError(...fields) {
 
 function projectHandler() {
   const projectButton = document.getElementsByClassName('cta-button');
-  showAlert('Try again later to see projects', 'error');
+  // showAlert('Try again later to see projects', 'error');
 }
