@@ -3,6 +3,8 @@ const data = fetch("../js/projects.json")
   .then(projectData => addProjectData(projectData))
   .catch(error => console.error("Error fetching data:", error));
 
+console.log(data);
+
 const addProjectData = (projects) => {
   const projectsContainer = document.querySelector(".projects-grid");
   projects.forEach((project) => {
@@ -10,7 +12,7 @@ const addProjectData = (projects) => {
     projectCard.classList.add("project-card");
 
     projectCard.innerHTML = `
-            <img src="../assets/images/projects/${project.image}" alt="Project 1">
+            <img src="../assets/images/projects/${project.image}" alt="${project.title} screenshot">
             <h3>${project.title}</h3>
             <p>
               ${project.description}
