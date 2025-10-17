@@ -36,6 +36,26 @@
       </ul>
     </nav>
     <div id="overlay" onclick="toggleSidebar()" aria-hidden="true"></div>
+
+    <!-- GitHub Repo Modal -->
+    <div id="github-modal" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" aria-label="Close modal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h3>Choose Repository</h3>
+        <div class="repo-options">
+          <a id="frontend-repo" class="repo-option" target="_blank">
+            <i class="fa-solid fa-desktop"></i>
+            <span>Frontend</span>
+          </a>
+          <a id="backend-repo" class="repo-option" target="_blank">
+            <i class="fa-solid fa-server"></i>
+            <span>Backend</span>
+          </a>
+        </div>
+      </div>
+    </div>
     
     <!-- Hero Section for Projects Page -->
     <section id="projects-hero">

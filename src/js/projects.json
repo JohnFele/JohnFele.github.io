@@ -3,8 +3,21 @@
     "image": "Weather-app.png",
     "title": "Weather app",
     "description": "A simple web application that displays the current weather for a given location.",
-    "github": "https://github.com/JohnFele/Weather-app",
-    "link": "https://johns-weather-apps.netlify.app/",
+    "github": {
+      "frontend": "https://github.com/JohnFele/Weather-app"
+    },
+    "link": "https://johnfele-weather-app.netlify.app/",
     "technologies": ["React", "Tailwind CSS", "OpenWeather API", "Sunrise-Sunset API"]
+  },
+  {
+    "image": "Chatbot-app.png",
+    "title": "Chatbot app",
+    "description": "A Gemini AI powered chatbot application",
+    "github": {
+      "frontend": "https://github.com/JohnFele/Chat-bot",
+      "backend": "https://github.com/JohnFele/Chat-bot-backend"
+    },
+    "link": "https://johnfele-chatbot.netlify.app/",
+    "technologies": ["React", "Tailwind CSS", "Google's Gemini AI"]
   }
 ]
