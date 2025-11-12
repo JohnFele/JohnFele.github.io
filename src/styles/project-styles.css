@@ -45,12 +45,14 @@ img {
   margin-bottom: 1em;
 }
 
+/* Projects Grid Layout */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2em;
   max-width: 1200px;
   margin: 0 auto;
+  align-items: stretch; /* This ensures all cards stretch to same height */
 }
 
 .project-card {
@@ -58,6 +60,10 @@ img {
   padding: 2em;
   border-radius: 1em;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 500px;
 }
 
 .project-card:hover {
@@ -65,28 +71,51 @@ img {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Image container with fixed height */
 .project-card img {
   width: 100%;
+  height: 200px; /* Fixed height for all images */
+  object-fit: cover; /* This ensures images fill the space without distortion */
   border-radius: 0.5em;
   margin-bottom: 1em;
+  flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+/* Content area that grows to fill space */
+.project-card-content {
+  flex: 1; /* This makes the content area grow to fill available space */
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card h3 {
   font-size: 1.5em;
   color: var(--txt-color-br);
   margin-bottom: 0.5em;
+  flex-shrink: 0; /* Keep title fixed */
 }
 
 .project-card p {
   color: var(--txt-color-dm);
   line-height: 1.5;
   margin-bottom: 1em;
+  flex: 1; /* Allow description to grow */
+}
+
+.project-card p:last-of-type {
+  flex: none;
+  max-height: 80px;
+  overflow-y: auto;
+  margin-bottom: 1.5em;
 }
 
 .project-links {
   display: flex;
   justify-content: center;
   gap: 1em;
+  margin-top: auto; /* Push links to bottom */
+  flex-shrink: 0; /* Keep links fixed at bottom */
+  padding-top: 1em;
 }
 
 .project-links i {
@@ -102,6 +131,7 @@ img {
   text-decoration: none;
   transition: color 0.3s ease;
   transition: transform 0.3s ease;
+  position: relative; /* For tooltip positioning */
 }
 
 .project-link:hover {

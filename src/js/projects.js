@@ -17,23 +17,44 @@ const addProjectData = (projects) => {
                       (isSingleRepoObject ? project.github.frontend : 
                       (typeof project.github === 'string' ? project.github : '#'));
 
+    // projectCard.innerHTML = `
+    //   <img src="../assets/images/projects/${project.image}" alt="${project.title} screenshot">
+    //   <h3>${project.title}</h3>
+    //   <p>${project.description}</p>
+    //   <p>Technologies:<br> ${project.technologies.join(", ")}</p>
+    //   <div class="project-links">
+    //     <a href="${githubLink}" 
+    //        class="project-link github-link" 
+    //        data-project-index="${index}"
+    //        ${hasMultipleRepos ? '' : 'target="_blank"'}
+    //        ${hasMultipleRepos ? 'style="cursor: pointer;"' : ''}>
+    //       <i class="fa-brands fa-github"></i> GitHub
+    //       ${!hasMultipleRepos ? '<span class="github-tooltip">View Repository</span>' : ''}
+    //     </a>
+    //     <a href="${project.link}" target="_blank" class="project-link">
+    //       <i class="fa-solid fa-globe"></i> Live Demo
+    //     </a>
+    //   </div>
+    // `;
     projectCard.innerHTML = `
       <img src="../assets/images/projects/${project.image}" alt="${project.title} screenshot">
-      <h3>${project.title}</h3>
-      <p>${project.description}</p>
-      <p>Technologies:<br> ${project.technologies.join(", ")}</p>
-      <div class="project-links">
-        <a href="${githubLink}" 
-           class="project-link github-link" 
-           data-project-index="${index}"
-           ${hasMultipleRepos ? '' : 'target="_blank"'}
-           ${hasMultipleRepos ? 'style="cursor: pointer;"' : ''}>
-          <i class="fa-brands fa-github"></i> GitHub
-          ${!hasMultipleRepos ? '<span class="github-tooltip">View Repository</span>' : ''}
-        </a>
-        <a href="${project.link}" target="_blank" class="project-link">
-          <i class="fa-solid fa-globe"></i> Live Demo
-        </a>
+      <div class="project-card-content">
+        <h3>${project.title}</h3>
+        <p class="project-description">${project.description}</p>
+        <p class="project-technologies">Technologies:<br> ${project.technologies.join(", ")}</p>
+        <div class="project-links">
+          <a href="${githubLink}" 
+             class="project-link github-link" 
+             data-project-index="${index}"
+             ${hasMultipleRepos ? '' : 'target="_blank"'}
+             ${hasMultipleRepos ? 'style="cursor: pointer;"' : ''}>
+            <i class="fa-brands fa-github"></i> GitHub
+            ${!hasMultipleRepos ? '<span class="github-tooltip">View Repository</span>' : ''}
+          </a>
+          <a href="${project.link}" target="_blank" class="project-link">
+            <i class="fa-solid fa-globe"></i> Live Demo
+          </a>
+        </div>
       </div>
     `;
     projectsContainer.appendChild(projectCard);

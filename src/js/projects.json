@@ -19,5 +19,15 @@
     },
     "link": "https://johnfele-chatbot.netlify.app/",
     "technologies": ["React", "Tailwind CSS", "Google's Gemini AI"]
+  },
+  {
+    "image": "Aerogen-tut.png",
+    "title": "Aerogen Tutorial Website",
+    "description": "A website that connects tutors, parents, and students for tutoring services.",
+    "github": {
+      "frontend": "https://github.com/JohnFele/AeroGen-Tutoring"
+    },
+    "link": "https://aerogen-tut.netlify.app/",
+    "technologies": ["React", "Tailwind CSS"]
   }
 ]
