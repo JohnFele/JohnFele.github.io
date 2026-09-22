@@ -2,7 +2,7 @@
   {
     "image": "Weather-app.png",
     "title": "Weather app",
-    "description": "A simple web application that displays the current weather for a given location.",
+    "description": "A responsive React weather application that combines live forecast and sunrise-sunset data for searched locations.",
     "github": {
       "frontend": "https://github.com/JohnFele/Weather-app"
     },
@@ -12,18 +12,18 @@
   {
     "image": "Chatbot-app.png",
     "title": "Chatbot app",
-    "description": "A Gemini AI powered chatbot application",
+    "description": "A full-stack Gemini-powered chatbot with a React interface, a separate Node.js backend, API integration, and production deployment.",
     "github": {
       "frontend": "https://github.com/JohnFele/Chat-bot",
       "backend": "https://github.com/JohnFele/Chat-bot-backend"
     },
     "link": "https://johnfele-chatbot.netlify.app/",
-    "technologies": ["React", "Tailwind CSS", "Google's Gemini AI"]
+    "technologies": ["React", "Tailwind CSS", "Node.js", "Express.js", "Google Gemini API"]
   },
   {
     "image": "Aerogen-tut.png",
     "title": "Aerogen Tutorial Website",
-    "description": "A website that connects tutors, parents, and students for tutoring services.",
+    "description": "A responsive tutoring-services website designed to connect tutors with parents and students through a clear, accessible interface.",
     "github": {
       "frontend": "https://github.com/JohnFele/AeroGen-Tutoring"
     },
