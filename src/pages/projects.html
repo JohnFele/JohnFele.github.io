@@ -3,121 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>John Fele - Projects</title>
-  
+  <meta name="description" content="Full-stack engineering case studies by John Fele, including production authentication, REST APIs, MongoDB, React and Node.js applications.">
+  <meta name="theme-color" content="#08111f">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Engineering Case Studies | John Fele">
+  <meta property="og:description" content="Selected production and personal projects by Full-Stack JavaScript Engineer John Fele.">
+  <meta property="og:url" content="https://johnfele.github.io/src/pages/projects.html">
+  <meta property="og:image" content="https://johnfele.github.io/src/assets/images/projects/Untitled.jpg">
+  <link rel="canonical" href="https://johnfele.github.io/src/pages/projects.html">
+  <title>Engineering Case Studies | John Fele</title>
   <link rel="stylesheet" href="../styles/style.css">
-  <link rel="stylesheet" href="../styles/project-styles.css">
   <link rel="stylesheet" href="../styles/media-queries.css">
-
+  <link rel="stylesheet" href="../styles/project-styles.css">
   <script src="https://kit.fontawesome.com/0a4ff4127d.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <button id="open-sidebar" onclick="toggleSidebar()" aria-label="open-sidebar" aria-expanded="false" aria-controls="navbar">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-
-    <nav id="navbar">
-      <ul>
-        <li><button id="close-sidebar" onclick="toggleSidebar()" aria-label="close-sidebar"><i class="fa-solid fa-xmark"></i></button></li>
-        <a class="logo"><span class="logo-styling">Port<span>folio.</span></span></a>
-        <li class="home-link"><a href="../../index.html">Home</a></li>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <nav id="navbar" aria-label="Primary navigation">
+      <a class="logo" href="../../index.html" aria-label="John Fele home">JF<span>.</span></a>
+      <button id="open-sidebar" type="button" onclick="toggleSidebar()" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links"><i class="fa-solid fa-bars"></i></button>
+      <ul id="nav-links">
+        <li class="mobile-nav-header"><span>Navigate</span><button id="close-sidebar" type="button" onclick="toggleSidebar()" aria-label="Close navigation"><i class="fa-solid fa-xmark"></i></button></li>
+        <li><a href="../../index.html">Home</a></li>
         <li><a href="../../index.html#about">About</a></li>
         <li><a href="../../index.html#skills">Skills</a></li>
-        <li><a href="projects.html" class="active-link">Projects</a></li>
-        <li><a href="../../index.html#services">Services</a></li>
+        <li><a class="active-link" href="projects.html">Projects</a></li>
         <li><a href="../../index.html#experience">Experience</a></li>
         <li><a href="../../index.html#contact">Contact</a></li>
-        <li><a class="accent-link" href="https://drive.google.com/file/d/1HZUyR0DiX2WH-m2ZJH0npF22wEWyPnDr/view?usp=sharing" target="_blank"><span>Resume</span></a></li>
+        <li><a class="nav-cta" href="mailto:fele476@gmail.com">Let’s talk</a></li>
       </ul>
     </nav>
     <div id="overlay" onclick="toggleSidebar()" aria-hidden="true"></div>
-
-    <!-- GitHub Repo Modal -->
-    <div id="github-modal" class="modal">
-      <div class="modal-content">
-        <button class="modal-close" aria-label="Close modal">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-        <h3>Choose Repository</h3>
-        <div class="repo-options">
-          <a id="frontend-repo" class="repo-option" target="_blank">
-            <i class="fa-solid fa-desktop"></i>
-            <span>Frontend</span>
-          </a>
-          <a id="backend-repo" class="repo-option" target="_blank">
-            <i class="fa-solid fa-server"></i>
-            <span>Backend</span>
-          </a>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Hero Section for Projects Page -->
-    <section id="projects-hero">
-      <div class="projects-hero-content">
-        <h1>My Projects</h1>
-        <p>
-          Here are some of the projects I've worked on. Each project showcases my skills in web development, problem-solving, and creativity.
-        </p>
-      </div>
-    </section>
   </header>
 
-  <main>
-    <!-- Projects Section -->
-    <section id="projects" class="hidden">
-      <div class="projects-content">
-        <h2>Featured Projects</h2>
-        <div class="projects-grid">
+  <main id="main-content">
+    <section class="projects-intro section-shell">
+      <p class="eyebrow">Engineering case studies</p>
+      <h1>What I built, why it mattered and how it worked.</h1>
+      <p>Selected professional and personal work covering architecture, authentication, APIs, data modelling, deployment and product delivery.</p>
+      <div class="projects-jump"><a href="#ulink2u">Professional case study</a><a href="#restaurant">Current build</a><a href="#experiments">Deployed experiments</a></div>
+    </section>
+
+    <section id="ulink2u" class="case-study section-shell">
+      <div class="case-heading">
+        <div><span class="case-number">01</span><p class="eyebrow">Professional project · Private source</p><h2>ULink2U Learning Platform</h2></div>
+        <p class="case-summary">A full-stack learning platform designed, built, deployed and maintained for Ulink while I served as the project’s sole developer.</p>
+      </div>
+      <div class="case-grid">
+        <div class="case-body">
+          <article><h3>The challenge</h3><p>Translate operational requirements into a secure platform that could support user onboarding, role-based functionality, account recovery and ongoing content delivery without a large engineering team.</p></article>
+          <article><h3>My responsibility</h3><p>I owned the technical delivery path from application architecture and interface development to backend services, database integration, authentication, deployment and maintenance.</p></article>
+          <article><h3>Key engineering work</h3><ul><li>Access and refresh-token authentication using secure cookies</li><li>Email verification and password-reset OTP workflows</li><li>Google authentication and role-based application behaviour</li><li>Validation, rate limiting, CORS and security controls</li><li>Backend refactoring and database-query optimisation</li></ul></article>
+          <article><h3>Outcome</h3><p>Improved API response times by approximately 30% while delivering a maintainable system that could be deployed and supported across Render and Netlify.</p></article>
+        </div>
+        <aside class="architecture-card">
+          <p class="architecture-label">System overview</p>
+          <div class="architecture-flow">
+            <div><i class="fa-brands fa-react"></i><strong>React client</strong><span>Vite · Tailwind</span></div>
+            <i class="fa-solid fa-arrow-down flow-arrow"></i>
+            <div><i class="fa-solid fa-server"></i><strong>Express API</strong><span>Auth · REST · Validation</span></div>
+            <i class="fa-solid fa-arrow-down flow-arrow"></i>
+            <div><i class="fa-solid fa-database"></i><strong>MongoDB</strong><span>Mongoose · Atlas</span></div>
+          </div>
+          <p class="private-note"><i class="fa-solid fa-lock"></i> Developed for Ulink. The original production source code is private and remains with Ulink.</p>
+        </aside>
+      </div>
+      <div class="tag-list case-tags"><span>React</span><span>Vite</span><span>Tailwind CSS</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>Mongoose</span><span>JWT</span><span>OAuth</span><span>Render</span><span>Netlify</span></div>
+    </section>
+
+    <section id="restaurant" class="case-study case-study-alt">
+      <div class="section-shell">
+        <div class="case-heading">
+          <div><span class="case-number">02</span><p class="eyebrow">Personal project · In progress</p><h2>Restaurant Commerce Platform</h2></div>
+          <p class="case-summary">A full-stack ordering application being developed to demonstrate production-style commerce workflows rather than a static storefront.</p>
+        </div>
+        <div class="restaurant-grid">
+          <div class="project-visual"><img src="../assets/images/projects/e-commerce.jpg" alt="Shopping trolley representing the restaurant commerce platform"></div>
+          <div class="roadmap-card">
+            <h3>Current scope</h3>
+            <ul><li>User authentication and protected routes</li><li>Menu browsing and shopping-cart state</li><li>Responsive customer experience</li><li>Administrative dashboard</li></ul>
+            <h3>Next engineering milestones</h3>
+            <ul class="next-list"><li>Order-state workflow and inventory updates</li><li>Payment-sandbox integration</li><li>Automated API and interface tests</li><li>Deployment pipeline and operational logging</li></ul>
+            <div class="tag-list"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>REST APIs</span><span>JWT</span></div>
+          </div>
         </div>
       </div>
+    </section>
+
+    <section id="experiments" class="experiments section-shell">
+      <div class="section-heading"><p class="eyebrow">Deployed experiments</p><h2>Smaller builds that sharpen specific skills.</h2></div>
+      <div class="experiment-grid">
+        <article class="experiment-card">
+          <img src="../assets/images/projects/Untitled.jpg" alt="Weather application interface">
+          <div><span class="project-type">API integration</span><h3>Weather Intelligence UI</h3><p>Responsive forecast experience using location, current weather, five-day forecast, sunrise and sunset APIs.</p><div class="tag-list"><span>React</span><span>Tailwind</span><span>OpenWeather</span></div><div class="project-actions"><a href="https://johnfele-weather-app.netlify.app/" target="_blank" rel="noreferrer">Live demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a><a href="https://github.com/JohnFele/Weather-app" target="_blank" rel="noreferrer">Source <i class="fa-brands fa-github"></i></a></div></div>
+        </article>
+        <article class="experiment-card">
+          <img src="../assets/images/projects/Chat-app.png" alt="Gemini chatbot application interface">
+          <div><span class="project-type">AI integration</span><h3>Gemini Assistant</h3><p>A conversational interface with a Node.js backend, input validation and Gemini-powered responses.</p><div class="tag-list"><span>React</span><span>Node.js</span><span>Gemini API</span></div><div class="project-actions"><a href="https://johnfele-chatbot.netlify.app/" target="_blank" rel="noreferrer">Live demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a></div></div>
+        </article>
+        <article class="experiment-card">
+          <img src="../assets/images/projects/Aerogen-tut.png" alt="Aerogen tutoring website interface">
+          <div><span class="project-type">Responsive frontend</span><h3>Aerogen Tutoring</h3><p>A responsive service website designed to connect tutors, parents and learners.</p><div class="tag-list"><span>React</span><span>Tailwind CSS</span></div><div class="project-actions"><a href="https://aerogen-tut.netlify.app/" target="_blank" rel="noreferrer">Live demo <i class="fa-solid fa-arrow-up-right-from-square"></i></a><a href="https://github.com/JohnFele/AeroGen-Tutoring" target="_blank" rel="noreferrer">Source <i class="fa-brands fa-github"></i></a></div></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="project-cta section-shell">
+      <p class="eyebrow">Next challenge</p><h2>Need a developer who can move from requirements to a deployed product?</h2><p>I’m available for worldwide remote roles and opportunities across Johannesburg and surrounding areas.</p><a href="mailto:fele476@gmail.com" class="button button-primary">Start a conversation <i class="fa-solid fa-arrow-right"></i></a>
     </section>
   </main>
 
   <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>John Fele</h3>
-        <p>A passionate full stack web developer and tutor dedicated to creating impactful solutions and helping others succeed.</p>
-      </div>
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#skills">Skills</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="index.html#services">Services</a></li>
-          <li><a href="index.html#experience">Experience</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Follow Me</h3>
-        <div class="socials-container">
-          <a data-icon="LinkedIn" style="--accent-color: #0077B5" href="https://www.linkedin.com/in/mr-john-fele-878b6922a/" target="_blank">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-          <a data-icon="GitHub" style="--accent-color: #171515" href="https://github.com/JohnFele" target="_blank">
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a data-icon="eMail" style="--accent-color: #EA4335" href="mailto:fele476@gmail.com" target="_blank">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-        </div>
-      </div>
+    <div class="section-shell footer-content">
+      <div><a class="logo" href="../../index.html">JF<span>.</span></a><p>Full-Stack JavaScript Engineer building dependable web products.</p></div>
+      <div class="footer-links"><a href="../../index.html#about">About</a><a href="../../index.html#skills">Skills</a><a href="projects.html">Projects</a><a href="../../index.html#contact">Contact</a></div>
+      <div class="footer-socials"><a href="https://www.linkedin.com/in/mr-john-fele-878b6922a/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a href="https://github.com/JohnFele" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a><a href="mailto:fele476@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a></div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 John Fele. All rights reserved.</p>
-    </div>
+    <div class="footer-bottom">© <span id="currentYear">2026</span> John Fele. Built with semantic HTML, CSS and JavaScript.</div>
   </footer>
-
   <script src="../js/script.js"></script>
-  <script src="../js/projects.js"></script>
+  <script src="../js/navScroll.js"></script>
 </body>
 </html>
