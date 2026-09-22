@@ -3,315 +3,171 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>John Fele Portfolio</title>
+  <meta name="description" content="John Fele is a Full-Stack JavaScript Engineer in Johannesburg building production applications with React, Node.js, Express, MongoDB and PostgreSQL.">
+  <meta name="theme-color" content="#08111f">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="John Fele | Full-Stack JavaScript Engineer">
+  <meta property="og:description" content="Production-focused full-stack engineering with React, Node.js, Express, MongoDB, PostgreSQL and hands-on deployment experience.">
+  <meta property="og:url" content="https://johnfele.github.io/">
+  <meta property="og:image" content="https://johnfele.github.io/src/assets/images/Me/John.png">
+  <link rel="canonical" href="https://johnfele.github.io/">
+  <title>John Fele | Full-Stack JavaScript Engineer</title>
   <link rel="stylesheet" href="src/styles/style.css">
   <link rel="stylesheet" href="src/styles/media-queries.css">
   <script src="https://kit.fontawesome.com/0a4ff4127d.js" crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Roboto+Mono:wght@500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <button id="open-sidebar" onclick="toggleSidebar()" aria-label="open-sidebar" aria-expanded="false" aria-controls="navbar">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-
-    <nav id="navbar">
-      <ul>
-        <li><button id="close-sidebar" onclick="toggleSidebar()" aria-label="close-sidebar"><i class="fa-solid fa-xmark"></i></button></li>
-        <a class="logo"><span class="logo-styling">Port<span>folio.</span></span></a>
-        <li class="home-link"><a class="active-link" href="#home">Home</a></li>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <nav id="navbar" aria-label="Primary navigation">
+      <a class="logo" href="#home" aria-label="John Fele home">JF<span>.</span></a>
+      <button id="open-sidebar" type="button" onclick="toggleSidebar()" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links"><i class="fa-solid fa-bars" aria-hidden="true"></i></button>
+      <ul id="nav-links">
+        <li class="mobile-nav-header"><span>Navigate</span><button id="close-sidebar" type="button" onclick="toggleSidebar()" aria-label="Close navigation"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button></li>
+        <li><a class="active-link" href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="src/pages/projects.html">Projects</a></li>
-        <li><a href="#services">Services</a></li>
+        <li><a href="#work">Work</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a class="accent-link" href="https://drive.google.com/file/d/1HZUyR0DiX2WH-m2ZJH0npF22wEWyPnDr/view?usp=sharing" target="_blank"><span>Resume</span></a></li>
+        <li><a class="nav-cta" href="src/pages/projects.html">Case studies</a></li>
       </ul>
     </nav>
     <div id="overlay" onclick="toggleSidebar()" aria-hidden="true"></div>
-    
-    <section id="home">
-      <div class="home-content">
-        <h1>Hello World, I'm John Fele.</h1>
-        <h2>I'm a <span class="highlight">full stack web developer.</span></h2>
-        <p>
-          I turn ideas into scalable, user-friendly applications that deliver real impact. As an aspiring full-stack developer 
-          and passionate mathematics tutor, I combine problem-solving skills with technical expertise to build efficient solutions. 
-          Let's create something great together.
-        </p>
-        <div class="socials-container">
-          <a href="src/pages/projects.html" class="cta-button">View Projects</a>
-          <a data-icon="LinkedIn" style="--accent-color: #0077B5" href="https://www.linkedin.com/in/mr-john-fele-878b6922a/" target="_blank">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-          <a data-icon="GitHub" style="--accent-color: #171515" href="https://github.com/JohnFele" target="_blank">
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a data-icon="eMail" style="--accent-color: #EA4335" href="mailto:fele476@gmail.com" target="_blank">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-        </div>
-      </div>
-      
-      <div class="home-image">
-        <img src="src/assets/images/Me/John.png" alt="An image of John Fele">
-      </div>
-    </section>
   </header>
 
-  <main>
-    <section id="about" class="hidden">
-      <div class="about-content">
-        <h2>About Me</h2>
-        <p>
-          Hello World! I'm a passionate full stack web developer with a knack for solving complex problems and thriving in logical environments. 
-          My journey in tech has been hands-on and challenging—I started as the sole assistant programmer at my company, focusing on backend development 
-          while stepping into senior roles early on. Beyond coding, I tutor high school mathematics, life sciences, and physical sciences, a role I've embraced 
-          since 2018. My personalized teaching approach has helped numerous students achieve distinctions, as I adapt to their unique learning styles quickly 
-          and effectively.
-        </p>
+  <main id="main-content">
+    <section id="home" class="hero section-shell">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> Open to worldwide remote and Gauteng roles</p>
+        <h1>Full-stack systems.<br><span>Built for real use.</span></h1>
+        <p class="hero-lead">I’m John Fele, a Full-Stack JavaScript Engineer in Johannesburg. I design, build, deploy and maintain production applications using React, Node.js, Express, MongoDB and PostgreSQL.</p>
+        <div class="hero-actions">
+          <a href="src/pages/projects.html" class="button button-primary">View case studies <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+          <a href="#contact" class="button button-secondary">Contact me</a>
+        </div>
+        <div class="hero-links" aria-label="Professional profiles">
+          <a href="https://www.linkedin.com/in/mr-john-fele-878b6922a/" target="_blank" rel="noreferrer"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a>
+          <a href="https://github.com/JohnFele" target="_blank" rel="noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a>
+          <a href="mailto:fele476@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email</a>
+        </div>
+      </div>
+      <aside class="hero-profile" aria-label="John Fele profile summary">
+        <div class="portrait-frame"><img src="src/assets/images/Me/John.png" alt="John Fele, Full-Stack JavaScript Engineer"></div>
+        <div class="profile-card">
+          <p class="profile-label">Current focus</p>
+          <p>Production web platforms, secure APIs and dependable deployments.</p>
+          <div class="profile-stack"><span>React</span><span>Node.js</span><span>PostgreSQL</span><span>MongoDB</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="proof-strip" aria-label="Engineering highlights">
+      <div class="section-shell proof-grid">
+        <article><strong>End-to-end</strong><span>Architecture to deployment</span></article>
+        <article><strong>30%</strong><span>API response-time improvement</span></article>
+        <article><strong>Production</strong><span>Authentication, data and hosting</span></article>
+        <article><strong>South Africa</strong><span>Available for global remote work</span></article>
       </div>
     </section>
 
-    <section id="skills" class="hidden">
-      <div class="skills-content">
-        <h2>Skills</h2>
-        <div class="skills-grid">
-          <div class="skill-card">
-            <i class="fa-brands fa-html5"></i>
-            <h3>HTML5</h3>
-            <p>Proficient in creating semantic and accessible web pages.</p>
-          </div>
-          <div class="skill-card">
-            <i class="fa-brands fa-css3-alt"></i>
-            <h3>CSS3</h3>
-            <p>Skilled in responsive design and modern CSS frameworks.</p>
-          </div>
-          <div class="skill-card">
-            <i class="fa-brands fa-css3-alt"></i>
-            <h3>Tailwind CSS</h3>
-            <p>Experienced in utility-first styling for fast and responsive designs.</p>
-          </div>          
-          <div class="skill-card">
-            <i class="fa-brands fa-js"></i>
-            <h3>JavaScript</h3>
-            <p>Experienced in building interactive and dynamic web applications.</p>
-          </div>
-          <div class="skill-card">
-            <i class="fa-brands fa-react"></i>
-            <h3>React</h3>
-            <p>Proficient in building reusable components and state management.</p>
-          </div>
-          <div class="skill-card">
-            <i class="fa-solid fa-vial"></i>
-            <h3>Jest & Jasmine</h3>
-            <p>Skilled in writing unit and integration tests for robust applications.</p>
-          </div>          
-          <div class="skill-card">
-            <i class="fa-brands fa-node"></i>
-            <h3>Node.js</h3>
-            <p>Experienced in backend development and API integration.</p>
-          </div>
-          <div class="skill-card">
-            <i class="fa-solid fa-server"></i>
-            <h3>Express.js</h3>
-            <p>Skilled in building RESTful APIs and middleware integration.</p>
-          </div>
-          <div class="skill-card">
-            <i class="fa-solid fa-database"></i>
-            <h3>Databases</h3>
-            <p>Skilled in SQL and NoSQL databases like PostgreSQL and MongoDB.</p>
-          </div>
-          <div class="skill-card">
-            <i class="fa-brands fa-docker"></i>
-            <h3>Docker</h3>
-            <p>Proficient in containerization and deploying applications efficiently.</p>
-          </div>
-          <div class="skill-card">
-            <i class="fa-solid fa-rocket"></i>
-            <h3>CI/CD</h3>
-            <p>Experienced in setting up automated pipelines using GitHub Actions and Jenkins.</p>
-          </div>
-          
-          <div class="skill-card">
-            <i class="fa-brands fa-git-alt"></i>
-            <h3>Git & GitHub</h3>
-            <p>Experienced in version control, branching strategies, and collaborative development.</p>
-          </div>
+    <section id="about" class="section section-shell reveal">
+      <div class="section-heading"><p class="eyebrow">About</p><h2>I turn operational requirements into maintainable software.</h2></div>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>At Ulink, I serve as the sole developer responsible for translating business requirements into working software. My work covers responsive React interfaces, Node.js and Express APIs, MongoDB and PostgreSQL databases, authentication, testing, deployment, hosting and ongoing optimisation.</p>
+          <p>I enjoy owning the complete delivery lifecycle: clarifying the problem, choosing a practical architecture, implementing it, shipping it and improving it from real-world feedback.</p>
+        </div>
+        <div class="about-facts">
+          <div><span>Based in</span><strong>Johannesburg, South Africa</strong></div>
+          <div><span>Qualification</span><strong>NQF Level 5 — IT Systems Development</strong></div>
+          <div><span>Preferred work</span><strong>Worldwide remote · Gauteng hybrid/on-site</strong></div>
         </div>
       </div>
     </section>
 
-    <section id="services" class="hidden">
-      <div class="services-content">
-        <h2>Services</h2>
-        <div class="services-grid">
-          <div class="service-card">
-            <i class="fa-solid fa-code"></i>
-            <h3>Web Development</h3>
-            <p>Building responsive, user-friendly websites and web applications tailored to your needs.</p>
-          </div>
-          <div class="service-card">
-            <i class="fa-solid fa-network-wired"></i>
-            <h3>API Development</h3>
-            <p>Designing and implementing secure, scalable RESTful and GraphQL APIs.</p>
-          </div>
-          <div class="service-card">
-            <i class="fa-solid fa-cloud-arrow-up"></i>
-            <h3>DevOps & Deployment</h3>
-            <p>Setting up CI/CD pipelines, cloud hosting, and automated deployments.</p>
-          </div>                    
-          <div class="service-card">
-            <i class="fa-solid fa-mobile-screen"></i>
-            <h3>Mobile-Friendly Design</h3>
-            <p>Ensuring your website looks great and functions seamlessly on all devices.</p>
-          </div>
-          <div class="service-card">
-            <i class="fa-solid fa-gears"></i>
-            <h3>Backend Development</h3>
-            <p>Developing robust server-side solutions and APIs for scalable applications.</p>
-          </div>
-          <div class="service-card">
-            <i class="fa-solid fa-pen-ruler"></i>
-            <h3>UI/UX Design</h3>
-            <p>Creating intuitive and visually appealing interfaces for optimal user experiences.</p>
-          </div>
+    <section id="skills" class="section section-alt">
+      <div class="section-shell">
+        <div class="section-heading"><p class="eyebrow">Technical toolkit</p><h2>Skills I use to ship complete applications.</h2></div>
+        <div class="skill-groups">
+          <article class="skill-group"><i class="fa-brands fa-react" aria-hidden="true"></i><h3>Frontend</h3><p>React, JavaScript, TypeScript, Vite, Tailwind CSS, semantic HTML and responsive interfaces.</p></article>
+          <article class="skill-group"><i class="fa-solid fa-server" aria-hidden="true"></i><h3>Backend</h3><p>Node.js, Express, REST APIs, validation, JWT authentication, OAuth and security controls.</p></article>
+          <article class="skill-group"><i class="fa-solid fa-database" aria-hidden="true"></i><h3>Data</h3><p>MongoDB, Mongoose, PostgreSQL, relational modelling and database-query optimisation.</p></article>
+          <article class="skill-group"><i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i><h3>Delivery</h3><p>Git, GitHub, testing, Docker, CI/CD, environment configuration, Render, Netlify and GoDaddy.</p></article>
         </div>
       </div>
     </section>
 
-    <section id="experience" class="hidden">
-      <div class="experience-content">
-        <h2>Experience</h2>
+    <section id="work" class="section section-shell reveal">
+      <div class="section-heading split-heading"><div><p class="eyebrow">Selected work</p><h2>Evidence over buzzwords.</h2></div><a href="src/pages/projects.html" class="text-link">Explore all case studies <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></div>
+      <div class="featured-work">
+        <article class="work-card work-card-featured">
+          <div class="work-card-top"><span class="project-type">Professional project</span><span class="privacy-label"><i class="fa-solid fa-lock" aria-hidden="true"></i> Private source</span></div>
+          <h3>ULink2U Learning Platform</h3>
+          <p>Designed, built, deployed and maintained a full-stack learning platform for Ulink as the project’s sole developer.</p>
+          <ul class="outcome-list"><li>Access and refresh-token authentication</li><li>Email verification, password-reset OTP and Google authentication</li><li>Approximately 30% faster API responses after backend and query optimisation</li></ul>
+          <div class="tag-list"><span>React</span><span>Node.js</span><span>Express</span><span>MongoDB</span><span>JWT</span></div>
+          <a href="src/pages/projects.html#ulink2u" class="card-link">Read the case study <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </article>
+        <article class="work-card">
+          <div class="work-card-top"><span class="project-type">Personal project · In progress</span></div>
+          <h3>Restaurant Commerce Platform</h3>
+          <p>A full-stack ordering application with authentication, menu browsing, shopping-cart functionality and an administrative dashboard.</p>
+          <div class="tag-list"><span>React</span><span>Express</span><span>MongoDB</span><span>REST APIs</span></div>
+          <a href="src/pages/projects.html#restaurant" class="card-link">View roadmap <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+        </article>
+        <article class="work-card">
+          <div class="work-card-top"><span class="project-type">Deployed application</span></div>
+          <h3>Weather Intelligence UI</h3>
+          <p>A responsive weather application integrating forecast, geolocation, sunrise and sunset data through external APIs.</p>
+          <div class="tag-list"><span>React</span><span>Tailwind</span><span>OpenWeather</span></div>
+          <a href="https://johnfele-weather-app.netlify.app/" target="_blank" rel="noreferrer" class="card-link">Open live application <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience" class="section section-alt">
+      <div class="section-shell">
+        <div class="section-heading"><p class="eyebrow">Experience</p><h2>Hands-on ownership in production.</h2></div>
         <div class="timeline">
-          <div class="timeline-item">
-            <h3>Mathematics Tutor</h3>
-            <p class="timeline-date">2018 - Present</p>
-            <p>Provided personalized tutoring to high school students, helping them achieve academic success in mathematics and sciences.</p>
-          </div>
-          <div class="timeline-item">
-            <h3>Junior Developer</h3>
-            <p class="timeline-date">2023 - 2024</p>
-            <p>Started as a backend developer, gradually taking on more responsibilities and transitioning into a full stack role.</p>
-          </div>
-          <div class="timeline-item">
-            <h3>Full Stack Developer</h3>
-            <p class="timeline-date">2024 - Present</p>
-            <p>Developed and maintained web applications, focusing on both frontend and backend technologies. Collaborated with cross-functional teams to deliver high-quality solutions.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <section id="contact" class="hidden">
-      <div class="contact-content">
-        <h2>Contact Me</h2>
-        <p>Let's connect and bring your ideas to life! Feel free to reach out for collaborations, projects, or just a friendly chat.</p>
-        <div class="contact-container">
-          <div class="contact-info">
-            <h3>Contact Information</h3>
-            <ul>
-              <li>
-                <i class="fa-solid fa-envelope contact"></i>
-                <a href="mailto:johnfele@example.com">fele476@gmail.com</a>
-              </li>
-              <li>
-                <i class="fa-solid fa-phone contact"></i>
-                <a href="tel:+1234567890">+27 62 088 2443</a>
-              </li>
-              <li>
-                <i class="fa-solid fa-location-dot contact"></i>
-                <span>Johannesburg, South Africa</span>
-              </li>
-            </ul>
-            <div class="socials-container">
-              <a data-icon="LinkedIn" style="--accent-color: #0077B5" href="https://www.linkedin.com/in/mr-john-fele-878b6922a/" target="_blank">
-                <i class="fa-brands fa-linkedin-in"></i>
-              </a>
-              <a data-icon="GitHub" style="--accent-color: #171515" href="https://github.com/JohnFele" target="_blank">
-                <i class="fa-brands fa-github"></i>
-              </a>
-              <a data-icon="eMail" style="--accent-color: #EA4335" href="mailto:fele476@gmail.com" target="_blank">
-                <i class="fa-solid fa-envelope"></i>
-              </a>
-            </div>
-          </div>
-          
-          <form id="contactForm" class="contact-form" aria-labelledby="contactFormTitle">
-            <fieldset>
-              <legend id="contactFormTitle">Get in touch</legend>
-          
-              <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" placeholder="Enter your name">
-          
-              <label for="email">Your Email</label>
-              <input type="email" id="email" name="email" placeholder="Enter your email">
-          
-              <label for="message">Your Message</label>
-              <textarea id="message" name="message" placeholder="Write your message here" rows="5"></textarea>
-          
-              <button type="submit" class="cta-button">Send Message</button>
-            </fieldset>
-          </form>
-          
+          <article class="timeline-item"><div class="timeline-meta"><span>June 2024 — Present</span><span>Remote</span></div><h3>Full Stack Engineer</h3><p class="company">Ulink</p><p>Own the end-to-end technical delivery of web applications and websites, covering React interfaces, Node.js/Express services, databases, authentication, testing, deployment, hosting and maintenance.</p></article>
+          <article class="timeline-item timeline-item-secondary"><div class="timeline-meta"><span>June 2019 — Present</span><span>Part-time</span></div><h3>Mathematics &amp; Science Tutor</h3><p class="company">Bukho Bami Youth Centre</p><p>Explain complex concepts clearly, adapt lessons to individual learning needs and develop structured study plans for high-school learners.</p></article>
         </div>
       </div>
     </section>
 
-    <div id="alertMessage" class="alert" role="alert"></div>
+    <section id="contact" class="section section-shell reveal">
+      <div class="contact-panel">
+        <div><p class="eyebrow">Let’s work together</p><h2>Looking for a developer who can own the whole delivery path?</h2><p>I’m open to remote Full-Stack, JavaScript, Node.js and React opportunities worldwide, plus hybrid or on-site roles across Johannesburg and surrounding areas.</p>
+          <div class="contact-details"><a href="mailto:fele476@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i> fele476@gmail.com</a><a href="tel:+27620882443"><i class="fa-solid fa-phone" aria-hidden="true"></i> +27 62 088 2443</a><span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Johannesburg, South Africa</span></div>
+        </div>
+        <form id="contactForm" class="contact-form" aria-labelledby="contactFormTitle">
+          <h3 id="contactFormTitle">Send a message</h3>
+          <label for="name">Name</label><input type="text" id="name" name="name" autocomplete="name" required>
+          <label for="email">Email</label><input type="email" id="email" name="email" autocomplete="email" required>
+          <label for="message">Message</label><textarea id="message" name="message" rows="5" required></textarea>
+          <button type="submit" class="button button-primary">Send message <i class="fa-solid fa-paper-plane" aria-hidden="true"></i></button>
+        </form>
+      </div>
+      <div id="alertMessage" class="alert" role="status" aria-live="polite"></div>
+    </section>
   </main>
 
   <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>John Fele</h3>
-        <p>A passionate full stack web developer and tutor dedicated to creating impactful solutions and helping others succeed.</p>
-      </div>
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Follow Me</h3>
-        <div class="socials-container">
-          <a data-icon="LinkedIn" style="--accent-color: #0077B5" href="https://www.linkedin.com/in/mr-john-fele-878b6922a/" target="_blank">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-          <a data-icon="GitHub" style="--accent-color: #171515" href="https://github.com/JohnFele" target="_blank">
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a data-icon="eMail" style="--accent-color: #EA4335" href="mailto:fele476@gmail.com" target="_blank">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-        </div>
-      </div>
+    <div class="section-shell footer-content">
+      <div><a class="logo" href="#home">JF<span>.</span></a><p>Full-Stack JavaScript Engineer building dependable web products.</p></div>
+      <div class="footer-links"><a href="#about">About</a><a href="#skills">Skills</a><a href="src/pages/projects.html">Projects</a><a href="#contact">Contact</a></div>
+      <div class="footer-socials"><a href="https://www.linkedin.com/in/mr-john-fele-878b6922a/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a><a href="https://github.com/JohnFele" target="_blank" rel="noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a><a href="mailto:fele476@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a></div>
     </div>
+    <div class="footer-bottom">© <span id="currentYear">2026</span> John Fele. Built with semantic HTML, CSS and JavaScript.</div>
   </footer>
-  
+
   <script src="src/js/script.js"></script>
   <script src="src/js/navScroll.js"></script>
-  <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-  </script>
-  <script type="text/javascript">
-    (function(){
-      emailjs.init({
-        publicKey: "iNI0wuYGgjBhzkpsi",
-      });
-    })();
-  </script>
-
-  </body>
-
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init({ publicKey: "iNI0wuYGgjBhzkpsi" });</script>
+</body>
 </html>

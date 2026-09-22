@@ -1,30 +1,31 @@
-const navbar = document.getElementById('navbar');
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav a");
+const navLinksPanel = document.getElementById("nav-links");
+const overlay = document.getElementById("overlay");
+const openSidebarButton = document.getElementById("open-sidebar");
 
-function toggleSidebar() {
-  if(navbar.classList.contains('show-sidebar')){
-    navbar.classList.remove('show-sidebar');
-  } else {
-    navbar.classList.add('show-sidebar');
-  }
+function toggleSidebar(forceClose = false) {
+  if (!navLinksPanel) return;
+  const shouldOpen = forceClose ? false : !navLinksPanel.classList.contains("show");
+  navLinksPanel.classList.toggle("show", shouldOpen);
+  overlay?.classList.toggle("show", shouldOpen);
+  openSidebarButton?.setAttribute("aria-expanded", String(shouldOpen));
+  document.body.style.overflow = shouldOpen ? "hidden" : "";
 }
 
+document.querySelectorAll("#nav-links a").forEach((link) => {
+  link.addEventListener("click", () => toggleSidebar(true));
+});
+
+const observedSections = document.querySelectorAll("main section[id]");
+const sectionLinks = document.querySelectorAll('#nav-links a[href^="#"]');
+
 function changeActiveLink() {
-  let scrollPosition = window.scrollY;
-
-  sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 250;
-    const sectionHeight = section.offsetHeight;
-    const sectionId = section.getAttribute('id');
-
-    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-      navLinks.forEach((link) => link.classList.remove("active-link"));
-      document
-        .querySelector(`nav a[href="#${sectionId}"]`)
-        ?.classList.add("active-link");
+  const position = window.scrollY + 180;
+  observedSections.forEach((section) => {
+    const inside = position >= section.offsetTop && position < section.offsetTop + section.offsetHeight;
+    if (inside) {
+      sectionLinks.forEach((link) => link.classList.toggle("active-link", link.getAttribute("href") === `#${section.id}`));
     }
   });
 }
 
-window.addEventListener("scroll", changeActiveLink);
+window.addEventListener("scroll", changeActiveLink, { passive: true });
