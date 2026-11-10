@@ -1,163 +1,47 @@
-let currentProjectData = null;
-
-const data = fetch("../js/projects.json")
-  .then(response => response.json())
-  .then(projectData => addProjectData(projectData))
-  .catch(error => console.error("Error fetching data:", error));
-
-const addProjectData = (projects) => {
-  const projectsContainer = document.querySelector(".projects-grid");
-  projects.forEach((project, index) => {
-    const projectCard = document.createElement("div");
-    projectCard.classList.add("project-card");
-
-    const hasMultipleRepos = project.github && typeof project.github === 'object' && project.github.frontend && project.github.backend;
-    const isSingleRepoObject = project.github && typeof project.github === 'object' && project.github.frontend && !project.github.backend;
-    const githubLink = hasMultipleRepos ? '#' : 
-                      (isSingleRepoObject ? project.github.frontend : 
-                      (typeof project.github === 'string' ? project.github : '#'));
-
-    // projectCard.innerHTML = `
-    //   <img src="../assets/images/projects/${project.image}" alt="${project.title} screenshot">
-    //   <h3>${project.title}</h3>
-    //   <p>${project.description}</p>
-    //   <p>Technologies:<br> ${project.technologies.join(", ")}</p>
-    //   <div class="project-links">
-    //     <a href="${githubLink}" 
-    //        class="project-link github-link" 
-    //        data-project-index="${index}"
-    //        ${hasMultipleRepos ? '' : 'target="_blank"'}
-    //        ${hasMultipleRepos ? 'style="cursor: pointer;"' : ''}>
-    //       <i class="fa-brands fa-github"></i> GitHub
-    //       ${!hasMultipleRepos ? '<span class="github-tooltip">View Repository</span>' : ''}
-    //     </a>
-    //     <a href="${project.link}" target="_blank" class="project-link">
-    //       <i class="fa-solid fa-globe"></i> Live Demo
-    //     </a>
-    //   </div>
-    // `;
-    projectCard.innerHTML = `
-      <img src="../assets/images/projects/${project.image}" alt="${project.imageAlt || project.title + ' screenshot'}" loading="lazy">
-      <div class="project-card-content">
-        <h3>${project.title}</h3>
-        <p class="project-description">${project.description}</p>
-        <p class="project-technologies">Technologies:<br> ${project.technologies.join(", ")}</p>
-        <div class="project-links">
-          <a href="${githubLink}" 
-             class="project-link github-link" 
-             data-project-index="${index}"
-             ${hasMultipleRepos ? '' : 'target="_blank" rel="noopener noreferrer"'}
-             ${hasMultipleRepos ? 'style="cursor: pointer;"' : ''}>
-            <i class="fa-brands fa-github"></i> GitHub
-            ${!hasMultipleRepos ? '<span class="github-tooltip">View Repository</span>' : ''}
-          </a>
-          <a href="${project.link}" target="_blank" rel="noopener noreferrer" class="project-link">
-            <i class="fa-solid fa-globe"></i> Live Demo
-          </a>
-        </div>
-      </div>
-    `;
-    projectsContainer.appendChild(projectCard);
-  });
-
-  // Store projects globally for modal access
-  window.projectsData = projects;
-  
-  // Add event listeners after creating the cards
-  initializeModalHandlers();
-};
-
-const initializeModalHandlers = () => {
-  const modal = document.getElementById('github-modal');
-  const closeBtn = document.querySelector('.modal-close');
-  const githubLinks = document.querySelectorAll('.github-link');
-  const frontendRepo = document.getElementById('frontend-repo');
-  const backendRepo = document.getElementById('backend-repo');
-
-  // Open modal on GitHub link click (for projects with multiple repos)
-  githubLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      const projectIndex = parseInt(link.getAttribute('data-project-index'));
-      const projectData = window.projectsData[projectIndex];
-      
-      // Check if this project has multiple repositories
-      const hasMultipleRepos = projectData.github && 
-                              typeof projectData.github === 'object' && 
-                              projectData.github.frontend && 
-                              projectData.github.backend;
-      
-      // If it's a single repo project, just follow the link (don't prevent default)
-      if (!hasMultipleRepos) {
-        return; // Let the default link behavior happen
-      }
-      
-      // For multiple repos, show modal and prevent default link behavior
-      e.preventDefault();
-      currentProjectData = projectData;
-      showRepoModal(projectData);
-    });
-  });
-
-  // Close modal handlers
-  closeBtn.addEventListener('click', closeModal);
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      closeModal();
+(() => {
+  const base = new URL('./', document.currentScript.src);
+  const grid = document.querySelector('.projects-grid');
+  const dialog = document.getElementById('github-modal');
+  if (!grid || !dialog) return;
+  const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const arrow = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg>';
+  const code = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 20"/></svg>';
+  const safeUrl = value => { const url = new URL(value); if (url.protocol !== 'https:') throw Error('Invalid project URL'); return url.href; };
+  let projects = [];
+  function showRepositories(project) {
+    document.getElementById('repo-project-name').textContent = project.title;
+    for (const kind of ['frontend', 'backend']) {
+      const link = document.getElementById(kind + '-repo');
+      link.hidden = !project.github[kind];
+      if (project.github[kind]) link.href = safeUrl(project.github[kind]);
     }
-  });
-
-  // Escape key to close modal
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('show')) {
-      closeModal();
-    }
-  });
-
-  // Repository option handlers
-  frontendRepo.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (currentProjectData && currentProjectData.github.frontend) {
-      window.open(currentProjectData.github.frontend, '_blank', 'noopener,noreferrer');
-      closeModal();
-    }
-  });
-
-  backendRepo.addEventListener('click', (e) => {
-    e.preventDefault();
-    if (currentProjectData && currentProjectData.github.backend) {
-      window.open(currentProjectData.github.backend, '_blank', 'noopener,noreferrer');
-      closeModal();
-    }
-  });
-};
-
-const showRepoModal = (projectData) => {
-  const modal = document.getElementById('github-modal');
-  const frontendRepo = document.getElementById('frontend-repo');
-  const backendRepo = document.getElementById('backend-repo');
-
-  // Enable/disable buttons based on available repos
-  if (projectData.github.frontend) {
-    frontendRepo.style.display = 'flex';
-    frontendRepo.href = projectData.github.frontend;
-  } else {
-    frontendRepo.style.display = 'none';
+    dialog.showModal();
   }
-
-  if (projectData.github.backend) {
-    backendRepo.style.display = 'flex';
-    backendRepo.href = projectData.github.backend;
-  } else {
-    backendRepo.style.display = 'none';
-  }
-
-  modal.classList.add('show');
-  document.body.style.overflow = 'hidden';
-};
-
-const closeModal = () => {
-  const modal = document.getElementById('github-modal');
-  modal.classList.remove('show');
-  document.body.style.overflow = '';
-  currentProjectData = null;
-};
+  fetch(new URL('projects.json', base)).then(response => {
+    if (!response.ok) throw Error('Projects unavailable');
+    return response.json();
+  }).then(data => {
+    projects = data;
+    const limit = Number(grid.dataset.projectLimit) || data.length;
+    grid.innerHTML = data.slice(0, limit).map((project, index) => {
+      const multiple = typeof project.github === 'object' && project.github.backend && project.github.frontend;
+      const repository = typeof project.github === 'string' ? project.github : project.github.frontend;
+      const category = multiple ? 'Full stack application' : 'Frontend application';
+      return '<article class="project-card glass"><a class="project-image-link" href="' + escape(safeUrl(project.link)) + '" target="_blank" rel="noopener noreferrer" aria-label="Open ' + escape(project.title) + ' live demo"><div class="project-image-frame"><div class="project-window-bar" aria-hidden="true"><i></i><i></i><i></i><span>' + escape(new URL(project.link).hostname) + '</span></div><img src="' + escape(new URL('../assets/images/projects/' + project.image, base).href) + '" alt="' + escape(project.imageAlt || project.title + ' screenshot') + '" width="1280" height="800" loading="lazy"></div></a><div class="project-card-content"><span class="project-category">' + category + '</span><h3>' + escape(project.title) + '</h3><p class="project-description">' + escape(project.description) + '</p><ul class="project-technologies" aria-label="Technologies">' + project.technologies.map(name => '<li>' + escape(name) + '</li>').join('') + '</ul><div class="project-links">' + (multiple ? '<button class="project-link github-link" type="button" data-project-index="' + index + '" aria-haspopup="dialog">' + code + 'View code</button>' : '<a class="project-link github-link" href="' + escape(safeUrl(repository)) + '" target="_blank" rel="noopener noreferrer">' + code + 'View code</a>') + '<a class="project-link" href="' + escape(safeUrl(project.link)) + '" target="_blank" rel="noopener noreferrer">Live demo ' + arrow + '</a></div></div></article>';
+    }).join('');
+    const total = document.querySelector('.project-total');
+    if (total) total.textContent = data.length + ' projects · frontend to backend';
+  }).catch(() => {
+    grid.innerHTML = '<div class="projects-empty"><h3>The projects could not load.</h3><p>Refresh this page, or <a href="https://github.com/JohnFele" target="_blank" rel="noopener noreferrer">explore the work on GitHub</a>.</p></div>';
+  });
+  grid.addEventListener('click', event => {
+    const button = event.target.closest('[data-project-index]');
+    if (button) showRepositories(projects[Number(button.dataset.projectIndex)]);
+  });
+  dialog.querySelector('.modal-close').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => {
+    if (event.target !== dialog) return;
+    const box = dialog.getBoundingClientRect();
+    if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
+  });
+})();

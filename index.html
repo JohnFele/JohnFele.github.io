@@ -1,76 +1,164 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>John Fele Portfolio</title>
-  <link rel="stylesheet" href="src/styles/style.css">
-  <link rel="stylesheet" href="src/styles/media-queries.css">
-  <script src="https://kit.fontawesome.com/0a4ff4127d.js" crossorigin="anonymous"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#414141">
+<title>John Fele — Full Stack Developer</title>
+<meta name="description" content="John Fele is a full stack developer and mathematics tutor in Johannesburg. Explore thoughtful interfaces, practical applications and the work behind them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,500;8..144,600;8..144,700;8..144,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/styles/glass.css">
 </head>
 <body>
-  <header>
-    <button id="open-sidebar" onclick="toggleSidebar()" aria-label="open-sidebar" aria-expanded="false" aria-controls="navbar">
-      <i class="fa-solid fa-bars"></i>
-    </button>
-
-    <nav id="navbar">
-      <ul>
-        <li><button id="close-sidebar" onclick="toggleSidebar()" aria-label="close-sidebar"><i class="fa-solid fa-xmark"></i></button></li>
-        <a class="logo"><span class="logo-styling">Port<span>folio.</span></span></a>
-        <li class="home-link"><a class="active-link" href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="src/pages/projects.html">Projects</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a class="accent-link" href="https://drive.google.com/file/d/1HZUyR0DiX2WH-m2ZJH0npF22wEWyPnDr/view?usp=sharing" target="_blank"><span>Resume</span></a></li>
-      </ul>
-    </nav>
-    <div id="overlay" onclick="toggleSidebar()" aria-hidden="true"></div>
-    
-    <section id="home">
-      <div class="home-content">
-        <h1>Hello World, I'm John Fele.</h1>
-        <h2>I'm a <span class="highlight">full stack web developer.</span></h2>
-        <p>
-          I turn ideas into scalable, user-friendly applications that deliver real impact. As an aspiring full-stack developer 
-          and passionate mathematics tutor, I combine problem-solving skills with technical expertise to build efficient solutions. 
-          Let's create something great together.
-        </p>
-        <div class="socials-container">
-          <a href="src/pages/projects.html" class="cta-button">View Projects</a>
-          <a data-icon="LinkedIn" style="--accent-color: #0077B5" href="https://www.linkedin.com/in/mr-john-fele-878b6922a/" target="_blank">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-          <a data-icon="GitHub" style="--accent-color: #171515" href="https://github.com/JohnFele" target="_blank">
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a data-icon="eMail" style="--accent-color: #EA4335" href="mailto:fele476@gmail.com" target="_blank">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-        </div>
-      </div>
-      
-      <div class="home-image">
-        <img src="src/assets/images/Me/John.png" alt="An image of John Fele">
-      </div>
-    </section>
-  </header>
-
-  <main>
-    <section id="about" class="hidden">
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="ambient" aria-hidden="true">
+<div class="ambient-cyan">
+</div>
+<div class="ambient-pink">
+</div>
+</div>
+<header class="site-header glass">
+<a class="brand" href="#home" aria-label="John Fele home">
+<span class="brand-symbol">jf<span>.</span>
+</span>
+<span>John Fele<span class="brand-dot">.</span>
+</span>
+</a>
+<button class="menu-toggle" id="open-sidebar" aria-label="Open navigation" aria-controls="navbar" aria-expanded="false">
+<span>
+</span>
+<span>
+</span>
+</button>
+<nav id="navbar" aria-label="Main navigation">
+<a href="#projects" >Work</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#services">Services</a>
+<a href="#experience">Experience</a>
+<a class="nav-contact" href="#contact">Let's talk <span class="contact-dot">
+</span>
+</a>
+</nav>
+</header>
+<button class="nav-overlay" aria-label="Close navigation" hidden>
+</button>
+<main id="main" class="wrap">
+<section id="home" class="hero">
+<div class="hero-copy">
+<div class="hero-greeting">
+<span>
+</span> Hello, I'm John Fele</div>
+<h1>Turning ideas<br>into <em>real impact.</em>
+</h1>
+<p class="hero-role">Full stack developer. Problem solver. Mathematics tutor.</p>
+<p class="hero-description">I turn ideas into scalable, user-friendly applications that deliver real impact. As an aspiring full-stack developer
+          and passionate mathematics tutor, I combine problem-solving skills with technical expertise to build efficient solutions.
+          Let's create something great together.</p>
+<div class="hero-actions">
+<a class="button button-primary" href="#projects">Explore my work <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 12h16m-6-6 6 6-6 6"/>
+</svg>
+</a>
+<a class="button button-secondary" href="#contact">Let's talk</a>
+</div>
+<div class="hero-location">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/>
+<circle cx="12" cy="10" r="2.5"/>
+</svg> Johannesburg, South Africa<span class="meta-divider">
+</span>
+<a href="https://github.com/JohnFele" target="_blank" rel="noopener noreferrer">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 12h16m-6-6 6 6-6 6"/>
+</svg>
+</a>
+</div>
+</div>
+<div class="portrait-scene">
+<div class="portrait-orbit" aria-hidden="true">
+</div>
+<div class="portrait-backplate backplate-one" aria-hidden="true">
+</div>
+<div class="portrait-backplate backplate-two" aria-hidden="true">
+</div>
+<div class="portrait-frame glass">
+<div class="portrait-bar">
+<span class="window-dots">
+<i>
+</i>
+<i>
+</i>
+<i>
+</i>
+</span>
+<span>A LITTLE OF THE PERSON BEHIND THE CODE</span>
+</div>
+<div class="portrait-image">
+<img src="src/assets/images/Me/John.png" alt="John Fele" width="441" height="545" fetchpriority="high">
+</div>
+<div class="portrait-caption">
+<span>John Fele<small>Developer & lifelong learner</small>
+</span>
+<span class="portrait-mark">jf.</span>
+</div>
+</div>
+<div class="code-float glass" aria-hidden="true">
+<div>
+<span>
+</span> A LITTLE CODE, A LOT OF POSSIBILITY</div>
+<code>
+<span>const</span> mindset = {<br>&nbsp;&nbsp;curiosity: <b>"always"</b>,<br>&nbsp;&nbsp;impact: <b>"real"</b>
+<br>};</code>
+</div>
+<div class="orbit-icon glass" aria-hidden="true">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 20"/>
+</svg>
+</div>
+</div>
+</section>
+<div class="capabilities-bar">
+<span>Thoughtful interfaces</span>
+<i>
+</i>
+<span>Practical applications</span>
+<i>
+</i>
+<span>Connected experiences</span>
+<i>
+</i>
+<span>A human approach</span>
+</div>
+<section id="projects" class="content-section">
+<div class="section-heading">
+<div>
+<span class="section-kicker">SELECTED WORK</span>
+<h2>Ideas, made real<span>.</span>
+</h2>
+</div>
+<div class="section-heading-right">
+<p>A little curiosity. A lot of building.<br>Here are a few of the results.</p>
+<a class="text-link" href="src/pages/projects.html">All projects <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 12h16m-6-6 6 6-6 6"/>
+</svg>
+</a>
+</div>
+</div>
+<div class="projects-grid" data-project-limit="2" aria-live="polite">
+</div>
+</section>
+<section id="about" class="content-section">
       <div class="about-content">
-        <h2>About Me</h2>
+        <span class="section-kicker">A LITTLE ABOUT ME</span>
+<h2>Curious by nature.<br>Builder by choice<span>.</span>
+</h2>
         <p>
-          Hello World! I'm a passionate full stack web developer with a knack for solving complex problems and thriving in logical environments. 
-          My journey in tech has been hands-on and challenging—I started as the sole assistant programmer at my company, focusing on backend development 
-          while stepping into senior roles early on. Beyond coding, I tutor high school mathematics, life sciences, and physical sciences, a role I've embraced 
-          since 2018. My personalized teaching approach has helped numerous students achieve distinctions, as I adapt to their unique learning styles quickly 
+          Hello World! I'm a passionate full stack web developer with a knack for solving complex problems and thriving in logical environments.
+          My journey in tech has been hands-on and challenging—I started as the sole assistant programmer at my company, focusing on backend development
+          while stepping into senior roles early on. Beyond coding, I tutor high school mathematics, life sciences, and physical sciences, a role I've embraced
+          since 2018. My personalized teaching approach has helped numerous students achieve distinctions, as I adapt to their unique learning styles quickly
           and effectively.
         </p>
         <p>
@@ -78,123 +166,201 @@
           that brings together a React and TypeScript dashboard, an Express REST API, and Supabase-backed data storage.
         </p>
       </div>
-    </section>
-
-    <section id="skills" class="hidden">
+    <aside class="about-note glass">
+<div class="cube-scene" aria-hidden="true">
+<div class="depth-cube">
+<span class="cube-front">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 20"/>
+</svg>
+</span>
+<span class="cube-top">
+</span>
+<span class="cube-side">
+</span>
+</div>
+</div>
+<h3>A developer's mindset.<br>A tutor's patience.</h3>
+<p>I bring the same curiosity to solving a coding challenge as I do to helping someone understand a difficult idea.</p>
+<span class="note-signature">That's where the good work starts.</span>
+</aside>
+</section>
+<section id="skills" class="content-section">
       <div class="skills-content">
-        <h2>Skills</h2>
+        <div class="section-heading">
+<div>
+<span class="section-kicker">MY TOOLKIT</span>
+<h2>The tools behind<br>the thinking<span>.</span>
+</h2>
+</div>
+<p>From the first component to the final API.<br>The skills I bring to every build.</p>
+</div>
         <div class="skills-grid">
           <div class="skill-card">
-            <i class="fa-brands fa-html5"></i>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 20"/>
+</svg>
             <h3>HTML5</h3>
             <p>Proficient in creating semantic and accessible web pages.</p>
           </div>
           <div class="skill-card">
-            <i class="fa-brands fa-css3-alt"></i>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 20"/>
+</svg>
             <h3>CSS3</h3>
             <p>Skilled in responsive design and modern CSS frameworks.</p>
           </div>
           <div class="skill-card">
-            <i class="fa-brands fa-css3-alt"></i>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 20"/>
+</svg>
             <h3>Tailwind CSS</h3>
             <p>Building responsive dashboards and reusable interface styles with utility-first CSS.</p>
-          </div>          
+          </div>
           <div class="skill-card">
-            <i class="fa-brands fa-js"></i>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 20"/>
+</svg>
             <h3>JavaScript</h3>
             <p>Experienced in building interactive and dynamic web applications.</p>
           </div>
           <div class="skill-card">
-            <i class="fa-solid fa-code"></i>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 20"/>
+</svg>
             <h3>TypeScript</h3>
             <p>Using typed components, data models and API responses to build maintainable React applications.</p>
           </div>
           <div class="skill-card">
-            <i class="fa-brands fa-react"></i>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 20"/>
+</svg>
             <h3>React</h3>
             <p>Building reusable components, dashboard views and stateful interfaces connected to REST APIs.</p>
           </div>
           <div class="skill-card">
-            <i class="fa-solid fa-vial"></i>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 20"/>
+</svg>
             <h3>Jest & Jasmine</h3>
             <p>Skilled in writing unit and integration tests for robust applications.</p>
-          </div>          
+          </div>
           <div class="skill-card">
-            <i class="fa-brands fa-node"></i>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 20"/>
+</svg>
             <h3>Node.js</h3>
             <p>Experienced in backend development and API integration.</p>
           </div>
           <div class="skill-card">
-            <i class="fa-solid fa-server"></i>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 20"/>
+</svg>
             <h3>Express.js</h3>
             <p>Skilled in building RESTful APIs and middleware integration.</p>
           </div>
           <div class="skill-card">
-            <i class="fa-solid fa-database"></i>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<ellipse cx="12" cy="5" rx="8" ry="3"/>
+<path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/>
+</svg>
             <h3>Databases</h3>
             <p>Working with PostgreSQL, Supabase and MongoDB for application data modelling and persistence.</p>
           </div>
           <div class="skill-card">
-            <i class="fa-brands fa-docker"></i>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m12 3 10 6-10 6L2 9l10-6Zm-10 11 10 6 10-6M2 18l10 6 10-6"/>
+</svg>
             <h3>Docker</h3>
             <p>Proficient in containerization and deploying applications efficiently.</p>
           </div>
           <div class="skill-card">
-            <i class="fa-solid fa-rocket"></i>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 20"/>
+</svg>
             <h3>CI/CD</h3>
             <p>Experienced in setting up automated pipelines using GitHub Actions and Jenkins.</p>
           </div>
-          
+
           <div class="skill-card">
-            <i class="fa-brands fa-git-alt"></i>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M9 19c-5 1-5-3-7-3m14 6v-4c0-1 .1-2-1-3 4 0 7-2 7-6 0-1-1-3-2-4 0-1 0-2-1-3-2 0-4 1-5 2H9C7 3 5 2 3 2c-1 1-1 2-1 3C1 6 1 8 1 9c0 4 3 6 7 6-1 1-1 2-1 3v4"/>
+</svg>
             <h3>Git & GitHub</h3>
             <p>Experienced in version control, branching strategies, and collaborative development.</p>
           </div>
         </div>
       </div>
     </section>
-
-    <section id="services" class="hidden">
+<section id="services" class="content-section">
       <div class="services-content">
-        <h2>Services</h2>
+        <div class="section-heading">
+<div>
+<span class="section-kicker">HOW I CAN HELP</span>
+<h2>From possibility<br>to something practical<span>.</span>
+</h2>
+</div>
+</div>
         <div class="services-grid">
           <div class="service-card">
-            <i class="fa-solid fa-code"></i>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 20"/>
+</svg>
             <h3>Web Development</h3>
             <p>Building responsive, user-friendly websites and web applications tailored to your needs.</p>
           </div>
           <div class="service-card">
-            <i class="fa-solid fa-network-wired"></i>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 20"/>
+</svg>
             <h3>API Development</h3>
             <p>Designing and implementing secure, scalable RESTful and GraphQL APIs.</p>
           </div>
           <div class="service-card">
-            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m12 3 10 6-10 6L2 9l10-6Zm-10 11 10 6 10-6M2 18l10 6 10-6"/>
+</svg>
             <h3>DevOps & Deployment</h3>
             <p>Setting up CI/CD pipelines, cloud hosting, and automated deployments.</p>
-          </div>                    
+          </div>
           <div class="service-card">
-            <i class="fa-solid fa-mobile-screen"></i>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<rect x="2" y="3" width="20" height="14" rx="3"/>
+<path d="M8 22h8m-4-5v5"/>
+</svg>
             <h3>Mobile-Friendly Design</h3>
             <p>Ensuring your website looks great and functions seamlessly on all devices.</p>
           </div>
           <div class="service-card">
-            <i class="fa-solid fa-gears"></i>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m12 3 10 6-10 6L2 9l10-6Zm-10 11 10 6 10-6M2 18l10 6 10-6"/>
+</svg>
             <h3>Backend Development</h3>
             <p>Developing robust server-side solutions and APIs for scalable applications.</p>
           </div>
           <div class="service-card">
-            <i class="fa-solid fa-pen-ruler"></i>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m8 7-5 5 5 5m8-10 5 5-5 5m-3-13-2 20"/>
+</svg>
             <h3>UI/UX Design</h3>
             <p>Creating intuitive and visually appealing interfaces for optimal user experiences.</p>
           </div>
         </div>
       </div>
     </section>
-
-    <section id="experience" class="hidden">
+<section id="experience" class="content-section">
       <div class="experience-content">
-        <h2>Experience</h2>
+        <div class="section-heading">
+<div>
+<span class="section-kicker">THE JOURNEY SO FAR</span>
+<h2>Always building.<br>Always learning<span>.</span>
+</h2>
+</div>
+<a class="text-link" href="https://drive.google.com/file/d/1HZUyR0DiX2WH-m2ZJH0npF22wEWyPnDr/view?usp=sharing" target="_blank" rel="noopener noreferrer">View résumé <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4"/>
+</svg>
+</a>
+</div>
         <div class="timeline">
           <div class="timeline-item">
             <h3>Mathematics Tutor</h3>
@@ -214,113 +380,160 @@
         </div>
       </div>
     </section>
-    
-    <section id="contact" class="hidden">
+<section id="contact" class="content-section contact-section">
       <div class="contact-content">
-        <h2>Contact Me</h2>
+        <span class="section-kicker">LET'S CONNECT</span>
+<h2>Have something<br>in <span>mind?</span>
+</h2>
         <p>Let's connect and bring your ideas to life! Feel free to reach out for collaborations, projects, or just a friendly chat.</p>
         <div class="contact-container">
           <div class="contact-info">
             <h3>Contact Information</h3>
             <ul>
               <li>
-                <i class="fa-solid fa-envelope contact"></i>
-                <a href="mailto:johnfele@example.com">fele476@gmail.com</a>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<rect x="3" y="5" width="18" height="14" rx="3"/>
+<path d="m3 7 9 6 9-6"/>
+</svg>
+                <a href="mailto:fele476@gmail.com">fele476@gmail.com</a>
               </li>
               <li>
-                <i class="fa-solid fa-phone contact"></i>
-                <a href="tel:+1234567890">+27 62 088 2443</a>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M5 3h4l2 5-3 2a15 15 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2C9 21 3 15 3 5a2 2 0 0 1 2-2Z"/>
+</svg>
+                <a href="tel:+27620882443">+27 62 088 2443</a>
               </li>
               <li>
-                <i class="fa-solid fa-location-dot contact"></i>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/>
+<circle cx="12" cy="10" r="2.5"/>
+</svg>
                 <span>Johannesburg, South Africa</span>
               </li>
             </ul>
             <div class="socials-container">
-              <a data-icon="LinkedIn" style="--accent-color: #0077B5" href="https://www.linkedin.com/in/mr-john-fele-878b6922a/" target="_blank">
-                <i class="fa-brands fa-linkedin-in"></i>
+              <a data-icon="LinkedIn" style="--accent-color: #0077B5" href="https://www.linkedin.com/in/mr-john-fele-878b6922a/" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<rect x="3" y="3" width="18" height="18" rx="3"/>
+<path d="M7 10v7m0-10h.01M11 17v-7m0 3c0-4 6-4 6 0v4"/>
+</svg>
               </a>
-              <a data-icon="GitHub" style="--accent-color: #171515" href="https://github.com/JohnFele" target="_blank">
-                <i class="fa-brands fa-github"></i>
+              <a data-icon="GitHub" style="--accent-color: #171515" href="https://github.com/JohnFele" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M9 19c-5 1-5-3-7-3m14 6v-4c0-1 .1-2-1-3 4 0 7-2 7-6 0-1-1-3-2-4 0-1 0-2-1-3-2 0-4 1-5 2H9C7 3 5 2 3 2c-1 1-1 2-1 3C1 6 1 8 1 9c0 4 3 6 7 6-1 1-1 2-1 3v4"/>
+</svg>
               </a>
-              <a data-icon="eMail" style="--accent-color: #EA4335" href="mailto:fele476@gmail.com" target="_blank">
-                <i class="fa-solid fa-envelope"></i>
+              <a data-icon="eMail" style="--accent-color: #EA4335" href="mailto:fele476@gmail.com" target="_blank" rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<rect x="3" y="5" width="18" height="14" rx="3"/>
+<path d="m3 7 9 6 9-6"/>
+</svg>
               </a>
             </div>
           </div>
-          
-          <form id="contactForm" class="contact-form" aria-labelledby="contactFormTitle">
+
+          <form id="contactForm" class="contact-form glass" aria-labelledby="contactFormTitle">
             <fieldset>
               <legend id="contactFormTitle">Get in touch</legend>
-          
+
               <label for="name">Your Name</label>
               <input type="text" id="name" name="name" placeholder="Enter your name">
-          
+
               <label for="email">Your Email</label>
               <input type="email" id="email" name="email" placeholder="Enter your email">
-          
+
               <label for="message">Your Message</label>
-              <textarea id="message" name="message" placeholder="Write your message here" rows="5"></textarea>
-          
+              <textarea id="message" name="message" placeholder="Write your message here" rows="5">
+</textarea>
+
               <button type="submit" class="cta-button">Send Message</button>
             </fieldset>
           </form>
-          
+
         </div>
       </div>
     </section>
-
-    <div id="alertMessage" class="alert" role="alert"></div>
-  </main>
-
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>John Fele</h3>
-        <p>A passionate full stack web developer and tutor dedicated to creating impactful solutions and helping others succeed.</p>
-      </div>
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Follow Me</h3>
-        <div class="socials-container">
-          <a data-icon="LinkedIn" style="--accent-color: #0077B5" href="https://www.linkedin.com/in/mr-john-fele-878b6922a/" target="_blank">
-            <i class="fa-brands fa-linkedin-in"></i>
-          </a>
-          <a data-icon="GitHub" style="--accent-color: #171515" href="https://github.com/JohnFele" target="_blank">
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a data-icon="eMail" style="--accent-color: #EA4335" href="mailto:fele476@gmail.com" target="_blank">
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </footer>
-  
-  <script src="src/js/script.js"></script>
-  <script src="src/js/navScroll.js"></script>
-  <script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-  </script>
-  <script type="text/javascript">
-    (function(){
-      emailjs.init({
-        publicKey: "iNI0wuYGgjBhzkpsi",
-      });
-    })();
-  </script>
-
-  </body>
-
+<div id="alertMessage" class="alert" role="alert">
+</div>
+</main>
+<footer class="site-footer wrap">
+<div class="footer-top">
+<a class="brand" href="#home">John Fele<span class="brand-dot">.</span>
+</a>
+<p>Thoughtful code. Real-world impact.</p>
+<div class="footer-socials">
+<a href="https://github.com/JohnFele" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M9 19c-5 1-5-3-7-3m14 6v-4c0-1 .1-2-1-3 4 0 7-2 7-6 0-1-1-3-2-4 0-1 0-2-1-3-2 0-4 1-5 2H9C7 3 5 2 3 2c-1 1-1 2-1 3C1 6 1 8 1 9c0 4 3 6 7 6-1 1-1 2-1 3v4"/>
+</svg>
+</a>
+<a href="https://www.linkedin.com/in/mr-john-fele-878b6922a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<rect x="3" y="3" width="18" height="18" rx="3"/>
+<path d="M7 10v7m0-10h.01M11 17v-7m0 3c0-4 6-4 6 0v4"/>
+</svg>
+</a>
+<a href="mailto:fele476@gmail.com" aria-label="Email John">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<rect x="3" y="5" width="18" height="14" rx="3"/>
+<path d="m3 7 9 6 9-6"/>
+</svg>
+</a>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 John Fele</span>
+<span>Designed with intention. Built with care.</span>
+<a href="https://drive.google.com/file/d/1HZUyR0DiX2WH-m2ZJH0npF22wEWyPnDr/view?usp=sharing" target="_blank" rel="noopener noreferrer">View résumé <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M12 3v12m-5-5 5 5 5-5M4 16v4h16v-4"/>
+</svg>
+</a>
+</div>
+</footer>
+<dialog id="github-modal" class="repo-dialog glass" aria-labelledby="repo-dialog-title">
+<button class="modal-close" aria-label="Close repository chooser">×</button>
+<span class="dialog-symbol">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M9 19c-5 1-5-3-7-3m14 6v-4c0-1 .1-2-1-3 4 0 7-2 7-6 0-1-1-3-2-4 0-1 0-2-1-3-2 0-4 1-5 2H9C7 3 5 2 3 2c-1 1-1 2-1 3C1 6 1 8 1 9c0 4 3 6 7 6-1 1-1 2-1 3v4"/>
+</svg>
+</span>
+<h2 id="repo-dialog-title">Behind the build.</h2>
+<p id="repo-project-name">
+</p>
+<div class="repo-options">
+<a id="frontend-repo" target="_blank" rel="noopener noreferrer">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<rect x="2" y="3" width="20" height="14" rx="3"/>
+<path d="M8 22h8m-4-5v5"/>
+</svg>
+<span>Frontend<small>Explore the interface</small>
+</span>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 12h16m-6-6 6 6-6 6"/>
+</svg>
+</a>
+<a id="backend-repo" target="_blank" rel="noopener noreferrer">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<ellipse cx="12" cy="5" rx="8" ry="3"/>
+<path d="M4 5v14c0 4 16 4 16 0V5M4 12c0 4 16 4 16 0"/>
+</svg>
+<span>Backend<small>Explore the API</small>
+</span>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M4 12h16m-6-6 6 6-6 6"/>
+</svg>
+</a>
+</div>
+</dialog>
+<script src="src/js/script.js" defer>
+</script>
+<script src="src/js/navScroll.js" defer>
+</script>
+<script src="src/js/projects.js" defer>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer>
+</script>
+<script src="src/js/contact-init.js" defer>
+</script>
+</body>
 </html>
