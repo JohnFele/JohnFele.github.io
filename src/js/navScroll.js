@@ -2,6 +2,20 @@
   const scene = document.querySelector('.portrait-scene');
   const finePointer = window.matchMedia('(hover:hover) and (pointer:fine)');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion:reduce)');
+  const backToTop = document.querySelector('.back-to-top');
+  if (backToTop) {
+    const updateScrollButton = () => {
+      const shouldHide = window.scrollY < 500;
+      if (backToTop.hidden !== shouldHide) backToTop.hidden = shouldHide;
+    };
+    window.addEventListener('scroll', updateScrollButton, { passive: true });
+    window.addEventListener('pageshow', updateScrollButton);
+    updateScrollButton();
+    backToTop.addEventListener('click', () => {
+      document.querySelector('.site-header .brand')?.focus({ preventScroll: true });
+      window.scrollTo({ top: 0, behavior: reducedMotion.matches ? 'instant' : 'smooth' });
+    });
+  }
   if (scene) {
     const frame = scene.querySelector('.portrait-frame');
     scene.addEventListener('pointermove', event => {
