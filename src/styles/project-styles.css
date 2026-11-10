@@ -104,8 +104,8 @@ img {
 
 .project-card p:last-of-type {
   flex: none;
-  max-height: 80px;
-  overflow-y: auto;
+  max-height: none;
+  overflow: visible;
   margin-bottom: 1.5em;
 }
 

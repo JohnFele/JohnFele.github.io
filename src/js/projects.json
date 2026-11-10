@@ -1,5 +1,17 @@
 [
   {
+    "image": "Subtrack.jpg",
+    "imageAlt": "Subtrack subscription tracker sign-in page",
+    "title": "Subtrack — Subscription Tracker",
+    "description": "A full-stack subscription manager with a responsive dashboard for recurring costs, upcoming renewals and spending insights. Users can manage subscriptions, search and filter records, and sign in through a JWT-authenticated REST API backed by MongoDB.",
+    "github": {
+      "frontend": "https://github.com/JohnFele/subscription-tracker-frontend",
+      "backend": "https://github.com/JohnFele/subscription-tracker"
+    },
+    "link": "https://johns-subscription-tracker.netlify.app/",
+    "technologies": ["React", "TypeScript", "Tailwind CSS", "Vite", "Node.js", "Express.js", "MongoDB", "Mongoose", "JWT"]
+  },
+  {
     "image": "Weather-app.png",
     "title": "Weather app",
     "description": "A simple web application that displays the current weather for a given location.",

@@ -19,7 +19,7 @@ const fields = [
   { field: document.getElementById("message"), errorMessage: "Message is required!" }
 ];
 
-form.addEventListener("submit", function (event) {
+form?.addEventListener("submit", function (event) {
   event.preventDefault();
 
   resetForm();

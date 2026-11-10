@@ -37,7 +37,7 @@ const addProjectData = (projects) => {
     //   </div>
     // `;
     projectCard.innerHTML = `
-      <img src="../assets/images/projects/${project.image}" alt="${project.title} screenshot">
+      <img src="../assets/images/projects/${project.image}" alt="${project.imageAlt || project.title + ' screenshot'}" loading="lazy">
       <div class="project-card-content">
         <h3>${project.title}</h3>
         <p class="project-description">${project.description}</p>
@@ -46,12 +46,12 @@ const addProjectData = (projects) => {
           <a href="${githubLink}" 
              class="project-link github-link" 
              data-project-index="${index}"
-             ${hasMultipleRepos ? '' : 'target="_blank"'}
+             ${hasMultipleRepos ? '' : 'target="_blank" rel="noopener noreferrer"'}
              ${hasMultipleRepos ? 'style="cursor: pointer;"' : ''}>
             <i class="fa-brands fa-github"></i> GitHub
             ${!hasMultipleRepos ? '<span class="github-tooltip">View Repository</span>' : ''}
           </a>
-          <a href="${project.link}" target="_blank" class="project-link">
+          <a href="${project.link}" target="_blank" rel="noopener noreferrer" class="project-link">
             <i class="fa-solid fa-globe"></i> Live Demo
           </a>
         </div>
@@ -117,7 +117,7 @@ const initializeModalHandlers = () => {
   frontendRepo.addEventListener('click', (e) => {
     e.preventDefault();
     if (currentProjectData && currentProjectData.github.frontend) {
-      window.open(currentProjectData.github.frontend, '_blank');
+      window.open(currentProjectData.github.frontend, '_blank', 'noopener,noreferrer');
       closeModal();
     }
   });
@@ -125,7 +125,7 @@ const initializeModalHandlers = () => {
   backendRepo.addEventListener('click', (e) => {
     e.preventDefault();
     if (currentProjectData && currentProjectData.github.backend) {
-      window.open(currentProjectData.github.backend, '_blank');
+      window.open(currentProjectData.github.backend, '_blank', 'noopener,noreferrer');
       closeModal();
     }
   });
