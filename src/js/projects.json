@@ -9,7 +9,7 @@
       "backend": "https://github.com/JohnFele/subscription-tracker"
     },
     "link": "https://johns-subscription-tracker.netlify.app/",
-    "technologies": ["React", "TypeScript", "Tailwind CSS", "Vite", "Node.js", "Express.js", "Supabase", "JWT"]
+    "technologies": ["React", "TypeScript", "Tailwind CSS", "Vite", "Node.js", "Express.js", "Supabase"]
   },
   {
     "image": "Weather-app.png",
