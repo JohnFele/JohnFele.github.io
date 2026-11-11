@@ -21,5 +21,8 @@
 .site-header{position:sticky;top:16px;background:linear-gradient(135deg,#505255ed,#414346e8)}.back-to-top{position:fixed;right:24px;bottom:24px;bottom:max(24px,env(safe-area-inset-bottom));z-index:20;width:46px;height:46px;display:grid;place-items:center;border-radius:14px;color:var(--cyan);border-color:#0cc0df55;background:linear-gradient(135deg,#50595aee,#3f484bed);box-shadow:0 8px 22px #0005,inset 0 1px 0 #ffffff15;transition:transform .2s,border-color .2s}.back-to-top:hover{transform:translateY(-3px);border-color:var(--cyan)}.back-to-top svg{width:20px;height:20px}.back-to-top[hidden]{display:none}
 @media(max-width:850px){.site-header{top:12px}.back-to-top{right:16px;bottom:16px;bottom:max(16px,env(safe-area-inset-bottom))}}
 .portrait-frame{transform:rotateX(var(--tilt-x,0deg)) rotateY(calc(-9deg + var(--tilt-y,0deg))) rotateZ(3deg);transition:transform .35s ease-out}.portrait-caption>span:first-child{margin-left:auto;text-align:right}.portrait-mark{display:none}
+.contact-status{margin:12px 0 0;font-size:13px;line-height:1.5}
+.contact-status:empty{margin:0}
+.contact-form .cta-button:disabled{opacity:.65;cursor:wait}
 @media(max-width:1100px){.portrait-orbit{inset:20px;transform:rotate(-15deg) scale(.9)}}
 @media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

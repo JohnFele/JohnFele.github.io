@@ -22,7 +22,7 @@ Home includes two selected projects; the Projects page includes the full collect
 - CSS
 - JavaScript
 - Inline SVG icons
-- EmailJS for the existing contact form
+- Formspree for contact submissions and email notifications
 
 ## Project Structure
 ```
@@ -38,8 +38,7 @@ JohnFele.github.io
    │  ├─ script.js
    │  ├─ navScroll.js
    │  ├─ projects.js
-   │  ├─ projects.json
-   │  └─ contact-init.js
+   │  └─ projects.json
    ├─ pages
    │  └─ projects.html
    └─ styles
@@ -56,6 +55,10 @@ JohnFele.github.io
    git clone https://github.com/JohnFele/JohnFele.github.io.git
    ```
 2. Serve the repository root with a static server, such as VS Code Live Server, and open `index.html`. A server is needed for the project JSON to load; no Node.js runtime or build step is required.
+
+## Contact form
+
+Set the contact form's `action` in `index.html` to the public endpoint from the Formspree dashboard's Integration tab. Configure the notification email in Formspree. After deployment, submit a test from the live page and check the Formspree Submissions tab and the recipient inbox.
 
 ## Live Demo
 [View Portfolio](https://johnfele.github.io)

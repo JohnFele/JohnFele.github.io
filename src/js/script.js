@@ -10,94 +10,42 @@ const observer = new IntersectionObserver((entries) => {
 
 elements.forEach((el) => observer.observe(el));
 
-const form = document.getElementById("contactForm");
-const alertBox = document.getElementById("alertMessage");
+const contactForm = document.getElementById("contactForm");
 
-const fields = [
-  { field: document.getElementById("name"), errorMessage: "Name is required!" },
-  { field: document.getElementById("email"), errorMessage: "Email is required!" },
-  { field: document.getElementById("message"), errorMessage: "Message is required!" }
-];
-
-form?.addEventListener("submit", function (event) {
+contactForm?.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  resetForm();
+  const fieldset = contactForm.querySelector("fieldset");
+  if (fieldset.disabled) return;
 
-  const formValues = getFormValues();
-  
-  if (validateForm(formValues)) {
-    sendMessage(formValues);
+  const status = document.getElementById("contactStatus");
+  const data = new FormData(contactForm);
+  for (const [field, value] of data) {
+    data.set(field, value.trim());
+  }
+
+  if (!data.get("name") || !data.get("message")) {
+    status.textContent = "Please enter your name and a message.";
+    return;
+  }
+
+  fieldset.disabled = true;
+  status.textContent = "Sending…";
+  try {
+    const response = await fetch(contactForm.action, {
+      method: contactForm.method,
+      headers: { Accept: "application/json" },
+      body: data,
+    });
+    if (!response.ok) {
+      throw new Error(`Formspree returned HTTP ${response.status}`);
+    }
+    contactForm.reset();
+    status.textContent = "Message received. Thank you!";
+  } catch (error) {
+    console.error("Contact form submission failed", error);
+    status.textContent = "Your message couldn't be sent. Try again or use the email link.";
+  } finally {
+    fieldset.disabled = false;
   }
 });
-
-function getFormValues() {
-  return fields.reduce((values, fieldObj) => {
-    values[fieldObj.field.id] = fieldObj.field.value.trim();
-    return values;
-  }, {});
-}
-
-function resetForm() {
-  fields.forEach(({ field }) => field.classList.remove('input-error'));
-  alertBox.style.display = "none";
-}
-
-function validateForm(values) {
-  const missingFields = fields.filter(({ field, errorMessage }) => values[field.id] === "");
-
-  if (missingFields.length > 0) {
-    let alertMessage = missingFields.length > 1 ? "Fill all the missing fields!" : missingFields[0].errorMessage;
-    showAlert(alertMessage, "error");
-
-    const missingFieldElements = missingFields.map(item => item.field);
-    highlightError(...missingFieldElements);
-
-    return false;
-  }
-
-  if (!validateEmail(values.email)) {
-    showAlert("Enter a valid email address!", "error");
-    highlightError(document.getElementById("email"));
-    return false;
-  }
-
-  return true;
-}
-
-async function sendMessage(values) {
-  try {
-    const response = await emailjs.send("service_lod25uq", "template_mj0gzng", {
-      from_name: values.name,
-      from_email: values.email,
-      message: values.message
-    });
-    
-    showAlert("Message sent successfully!", "success");
-    form.reset();
-  } catch (error) {
-    showAlert("Failed to send message. Try again!", "error");
-  }
-}
-
-
-function showAlert(message, type) {
-  alertBox.textContent = message;
-  alertBox.className = `alert ${type}`;
-  alertBox.style.display = "block";
-  setTimeout(() => alertBox.style.display = "none", 3000);
-}
-
-function validateEmail(email) {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(email);
-}
-
-function highlightError(...fields) {
-  fields.forEach(field => field.classList.add('input-error'));
-}
-
-function projectHandler() {
-  const projectButton = document.getElementsByClassName('cta-button');
-  // showAlert('Try again later to see projects', 'error');
-}
