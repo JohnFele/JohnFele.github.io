@@ -37,9 +37,9 @@
 </a>
 </nav>
 </header>
-<button class="nav-overlay" aria-label="Close navigation" hidden>
+<button class="nav-overlay" aria-label="Close navigation" tabindex="-1" hidden>
 </button>
-<main id="main" class="wrap">
+<main id="main" class="wrap" tabindex="-1">
 <section class="work-intro">
 <a class="back-link" href="../../index.html">← Back to home</a>
 <span class="section-kicker">THE PROJECT COLLECTION</span>
@@ -101,8 +101,8 @@
 </a>
 </div>
 </footer>
-<dialog id="github-modal" class="repo-dialog glass" aria-labelledby="repo-dialog-title">
-<button class="modal-close" aria-label="Close repository chooser">×</button>
+<dialog id="github-modal" class="repo-dialog glass" aria-labelledby="repo-dialog-title" aria-describedby="repo-project-name">
+<button class="modal-close" type="button" aria-label="Close repository chooser">×</button>
 <span class="dialog-symbol">
 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
 <path d="M9 19c-5 1-5-3-7-3m14 6v-4c0-1 .1-2-1-3 4 0 7-2 7-6 0-1-1-3-2-4 0-1 0-2-1-3-2 0-4 1-5 2H9C7 3 5 2 3 2c-1 1-1 2-1 3C1 6 1 8 1 9c0 4 3 6 7 6-1 1-1 2-1 3v4"/>

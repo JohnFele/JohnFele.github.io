@@ -9,7 +9,7 @@ The version before the glass redesign is preserved at commit `c51d51a`, tagged `
 
 The current design keeps the charcoal `#414141`, cyan `#0cc0df` and pink `#ff66c4` palette. It uses frosted panels, layered portrait frames, perspective on project previews and a CSS cube for depth. The active stylesheet is `src/styles/glass.css`; the earlier stylesheets are retained as reference files. The site remains static HTML, CSS and browser JavaScript, without a build step.
 
-Home includes two selected projects; the Projects page includes the full collection. Project details and both frontend/backend repository links are maintained in `src/js/projects.json`. The repository chooser uses a native dialog with keyboard focus management and Escape support. Navigation adapts to mobile, and animation respects reduced-motion preferences.
+Home includes two selected projects; the Projects page includes the full collection. Both pages share the catalog in `src/js/projects.js`. The repository chooser uses a native dialog with keyboard focus management and Escape support. Navigation adapts to mobile, and animation respects reduced-motion preferences.
 
 ## Features
 - Responsive design for mobile and desktop
@@ -37,8 +37,7 @@ JohnFele.github.io
    ├─ js
    │  ├─ script.js
    │  ├─ navScroll.js
-   │  ├─ projects.js
-   │  └─ projects.json
+   │  └─ projects.js
    ├─ pages
    │  └─ projects.html
    └─ styles
@@ -54,11 +53,13 @@ JohnFele.github.io
    ```sh
    git clone https://github.com/JohnFele/JohnFele.github.io.git
    ```
-2. Serve the repository root with a static server, such as VS Code Live Server, and open `index.html`. A server is needed for the project JSON to load; no Node.js runtime or build step is required.
+2. Open `index.html` directly in a browser, or serve the repository root with a static server such as VS Code Live Server. No build step is required.
 
 ## Contact form
 
 Set the contact form's `action` in `index.html` to the public endpoint from the Formspree dashboard's Integration tab. Configure the notification email in Formspree. After deployment, submit a test from the live page and check the Formspree Submissions tab and the recipient inbox.
+
+Mirror the browser rules in the form's Formspree Workflow validations. Require `name` (text, up to 120 characters), `email` (email, up to 254 characters), and `message` (text, up to 5,000 characters). These rules are managed in Formspree.
 
 ## Live Demo
 [View Portfolio](https://johnfele.github.io)
